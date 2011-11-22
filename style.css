@@ -1,0 +1,238 @@
+/* Site-wide */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #ffffff;
+	color: #222222;
+	font-family: 'Verdana', sans-serif;
+	font-size: small;
+}
+
+a {
+	color: #3584FF;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FF4D36;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	font-family: 'Sansita One', sans-serif;
+	font-weight: 700;
+}
+
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+#main h2 {
+	margin-bottom: 10px;
+}
+
+p {
+	margin: 0px 0px 5px 0px;
+	padding: 0px;
+	text-align: justify;
+}
+
+.wrapper {
+	width: 900px;
+	margin: 0px auto;
+}
+
+form input.grey {
+	color: #555555;
+}
+
+/* Header */
+
+header {
+	margin: 0px;
+	padding: 20px;
+	background: #555555;
+	color: #eeeeee;
+	text-shadow: 0px 2px 2px #000;
+}
+
+nav {
+	margin: 0px 0px 20px 0px;
+	padding: 3px 0px 0px 0px;
+	background: #333333;
+	color: #666;
+	box-shadow: 0px 2px 5px #000 inset;
+	overflow: hidden;
+}
+
+nav a {
+	display: inline-block;
+	margin: 0px 10px 0px 0px;
+	padding: 10px;
+}
+
+nav ul {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+nav li {
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+}
+
+nav li.active a {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: #ffffff;
+	box-shadow: 0px 2px 5px #000;
+}
+
+nav form#searchbar {
+	float: right;
+	margin-top: 4px;
+	border-radius: 100px;
+}
+
+nav form#searchbar input[type=text] {
+	padding: 5px 10px;
+	border: 0px;
+	border-radius: 100px;
+	vertical-align: text-top;
+}
+
+nav form#searchbar input[type=submit] {
+	width: 24px;
+	height: 24px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	border-radius: 100px;
+	background: #3584FF url("/images/search.png");
+	vertical-align: text-top;
+}
+
+nav form#searchbar input[type=submit]:hover {
+	background: #FF4D36 url("/images/search.png");
+}
+
+/* Courses */
+
+.star {
+	display: inline-block;
+	background: url("/images/unstarred.png");
+	background-repeat: none;
+	height: 16px;
+	width: 16px;
+}
+
+.star:hover {
+	background: url("/images/unstarredhover.png");
+}
+
+.star.starred {
+	background: url("/images/starred.png");
+}
+
+.star.starred:hover {
+	background: url("/images/starredhover.png");
+}
+
+.course {
+	padding: 20px;
+	border-radius: 10px;
+	background: #eeeeee;
+	overflow: auto;
+}
+
+.taken {
+	background: #83FF36;
+	padding: 2px 5px;
+	border-radius: 3px;
+	font-size: xx-small;
+	font-weight: bold;
+}
+
+.info {
+	float: left;
+	width: 270px;
+	margin: 0px 10px 20px 0px;
+}
+
+.info table {
+	margin: 0px;
+	border-collapse: collapse;
+}
+
+.info td, .info th {
+	padding: 5px 10px;
+	border: 1px solid #cccccc;
+}
+
+.info th {
+	background: #cccccc;
+	text-align: right;
+	font-weight: normal;
+}
+
+.description {
+	float: right;
+	width: 570px;
+	margin-left: 10px;
+}
+
+.sections {
+	clear: both;
+}
+
+.sections table {
+	width: 100%;
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+}
+
+.sections td {
+	padding: 10px 20px;
+	border-top: 1px solid #cccccc;
+}
+
+.sections th {
+	padding: 5px 20px;
+	background: #cccccc;
+	text-align: left;
+	font-weight: normal;
+}
+
+.section .status {
+	padding: 2px 5px;
+	border-radius: 3px;
+	font-variant: small-caps;
+	text-transform: lowercase;
+}
+
+.section .open {
+	background: #83FF36;
+}
+
+.section .closed {
+	background: #FF4D36;
+}
+
+footer {
+	clear: both;
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+footer .wrapper {
+	border-top: 1px solid #aaaaaa;
+}
