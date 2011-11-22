@@ -1,11 +1,21 @@
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/header.php"); ?>
 <script type="text/javascript" language="javascript">
 	var tab = "courses";
+	var course;
+	$(document).ready(function() {
+		$.getJSON(
+			"/api/get/course.php",
+			function(data) {
+				course = data;
+				$("#title").html(course.subj_abbr);
+			}
+		);
+	});
 </script>
 
 <div class="wrapper">
 	<div id="main">
-		<h2><div class="star"></div> IMM 270 &mdash; Design Perspectives in Interactive Multimedia</h2>
+		<h2><div class="star"></div> <span id="title"></span> 270 &mdash; Design Perspectives in Interactive Multimedia</h2>
 		<div class="course">
 			<div class="info">
 				<h2>Information</h2>

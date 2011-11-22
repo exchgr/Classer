@@ -1,4 +1,4 @@
- <? require_once($_SERVER['DOCUMENT_ROOT'] . "/header.php"); ?>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/header.php"); ?>
 <div class="wrapper">
 	<div id="main">
 		<h2>Construction Zone</h2>

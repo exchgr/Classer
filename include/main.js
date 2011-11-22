@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	$.ajaxSetup ({
+		cache: false;
+	});
+	
 	$("#" + tab).addClass("active");
 
 	$("#search").focus(function() {
