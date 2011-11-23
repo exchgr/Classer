@@ -7,7 +7,7 @@
 			"/api/get/course.php",
 			function(data) {
 				course = data;
-				$("span#title").html(course.subj_abbr + "awesome");
+				$("div#title").html(course.subj_abbr);
 			}
 		);
 	});
@@ -15,7 +15,7 @@
 
 <div class="wrapper">
 	<div id="main">
-		<h2><div class="star"></div> <span id="title"></span> 270 &mdash; Design Perspectives in Interactive Multimedia</h2>
+		<h2><div class="star"></div> <div id="title"></div> 270 &mdash; Design Perspectives in Interactive Multimedia</h2>
 		<div class="course">
 			<div class="info">
 				<h2>Information</h2>
