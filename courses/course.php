@@ -6,8 +6,8 @@
 		$.getJSON(
 			"/api/get/course.php",
 			function(data) {
-				course = data;
-				$("#title").html(course.subj_abbr + "awesome");
+				// course = data;
+				$("#title").html(data.subj_abbr + "awesome");
 			}
 		);
 	});
