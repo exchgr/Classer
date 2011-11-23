@@ -8,7 +8,7 @@
 			function(data) {
 				console.log("something");
 				course = data;
-				$("div#title").html(course.subj_abbr);
+				$("#title").html(course.subj_abbr + " " + course.code + " &mdash; ");
 			}
 		);
 	});
@@ -16,7 +16,7 @@
 
 <div class="wrapper">
 	<div id="main">
-		<h2><div class="star"></div> <div id="title"></div> 270 &mdash; Design Perspectives in Interactive Multimedia</h2>
+		<h2><div class="star"></div> <span id="title"></span>Design Perspectives in Interactive Multimedia</h2>
 		<div class="course">
 			<div class="info">
 				<h2>Information</h2>
