@@ -8,6 +8,7 @@
 			function(data) {
 				course = data;
 				$("#title").html(course.subj_abbr + "awesome");
+				alert("cool");
 			}
 		);
 	});
