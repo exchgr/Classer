@@ -1,10 +1,16 @@
-<? require_once($_SERVER['DOCUMENT_ROOT'] . "/header.php"); ?>
+<?
+	require_once($_SERVER['DOCUMENT_ROOT'] . "/header.php");
+?>
 <script type="text/javascript" language="javascript">
 	var tab = "courses";
+	var c = <? echo $_GET["c"]; ?>;
 	var course;
 	$(document).ready(function() {
 		$.getJSON(
 			"/api/get/course.php",
+			{
+				c: c
+			}
 			function(json) {
 				console.log("something");
 				course = json;
