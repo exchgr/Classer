@@ -2,7 +2,6 @@
 <script type="text/javascript" language="javascript">
 	var tab = "courses";
 	var course;
-	alert("cool");
 	$(document).ready(function() {
 		$.getJSON(
 			"/api/get/course.php",
