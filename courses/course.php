@@ -7,7 +7,7 @@
 			"/api/get/course.php",
 			function(data) {
 				course = data;
-				$("div#title").html(course.subj_abbr);
+				$("div#title").html(data.subj_abbr);
 			}
 		);
 	});
