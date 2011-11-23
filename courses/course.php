@@ -10,7 +10,6 @@
 			"/api/get/course.php",
 			{ c: c },
 			function(json) {
-				console.log("something");
 				course = json;
 				$("#title").html(course.subjAbbr + " " + course.code + " &mdash; " + course.title);
 				$("#credits").html(course.credits);
