@@ -3,7 +3,7 @@
 ?>
 <script type="text/javascript" language="javascript">
 	var tab = "courses";
-	var c = <? echo $_GET["c"]; ?>;
+	var c = "<? echo $_GET["c"]; ?>";
 	var course;
 	$(document).ready(function() {
 		$.getJSON(
