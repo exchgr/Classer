@@ -2,13 +2,13 @@
 <script type="text/javascript" language="javascript">
 	var tab = "courses";
 	var course;
+	alert("cool");
 	$(document).ready(function() {
 		$.getJSON(
 			"/api/get/course.php",
 			function(data) {
 				course = data;
 				$("#title").html(course.subj_abbr + "awesome");
-				alert("cool");
 			}
 		);
 	});
