@@ -5,10 +5,19 @@
 	$(document).ready(function() {
 		$.getJSON(
 			"/api/get/course.php",
-			function(data) {
+			function(json) {
 				console.log("something");
-				course = data;
-				$("#title").html(course.subj_abbr + " " + course.code + " &mdash; " + course.description);
+				course = json;
+				$("#title").html(course.subjAbbr + " " + course.code + " &mdash; " + course.title);
+				$("#credits").html(course.credits);
+				$("#type").html(course.type);
+				$("#gradingType").html(course.gradingType);
+				$("#offered").html(course.offered);
+				$("#prereqs").html(course.prereqs);
+				$("#school").html(course.school);
+				$("#program").html(course.program);
+				$("#satisfies").html(course.satisfies);
+				$("#description").html(course.description);
 			}
 		);
 	});
@@ -23,41 +32,41 @@
 				<table>
 					<tr>
 						<th>Credits</th>
-						<td>4</td>
+						<td id="credits"></td>
 					</tr>
 					<tr>
 						<th>Course Type</th>
-						<td>Lecture</td>
+						<td id="type"></td>
 					</tr>
 					<tr>
 						<th>Grading Type</th>
-						<td>Graded</td>
+						<td id="gradingType"></td>
 					</tr>
 					<tr>
 						<th>Typically Offered</th>
-						<td>Fall and Spring</td>
+						<td id="offered"></td>
 					</tr>
 					<tr>
 						<th>Prerequisites</th>
-						<td>Two of:<br /><a href="/courses/course.php?c=IMM+110">IMM 110</a> <span class="taken" title="You've taken this course.">&#10003;</span><br /><a href="/courses/course.php?c=IMM+120">IMM 120</a> <span class="taken" title="You've taken this course.">&#10003;</span><br /><a href="/courses/course.php?c=IMM+140">IMM 140</a></td>
+						<td id="prereqs"></td>
 					</tr>
 					<tr>
 						<th>School</th>
-						<td><a href="/schools/school.php?s=School+of+the+Arts+and+Communications">School of the Arts and Communications</a></td>
+						<td id="school"></td>
 					</tr>
 					<tr>
 						<th>Program</th>
-						<td><a href="/depts/dept.php?d=Interactive+Multimedia">Interactive Multimedia</a></td>
+						<td id="program"></td>
 					</tr>
 					<tr>
 						<th>Satisfies</th>
-						<td>Academic Writing</td>
+						<td id="satisfies"></td>
 					</tr>
 				</table>
 			</div><!--/.info-->
 			<div class="description">
 				<h2>Description</h2>
-				<p>This class is interdisciplinary, bringing together the various bodies of knowledge that inform the field of interactive multimedia, such as storytelling, interaction design, interface design, project management and user testing. The class provides overview of concepts necessary both to create and evaluate interactive multimedia projects. Students apply these ideas to a series of individual writing and production assignments and ultimately to a collaborative project - that spans most of the semester. This writing-intensive course is one of four basic introductory courses for the Interactive Multimedia major taken by first and second year students.</p>
+				<div id="description"></div>
 			</div><!--/.description-->
 			<div class="sections">
 				<h2>Sections</h2>
