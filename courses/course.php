@@ -3,10 +3,13 @@
 	var tab = "courses";
 	var course;
 	$(document).ready(function() {
+		$.ajaxSetup ({
+			cache: false
+		});
+		
 		$.getJSON(
 			"/api/get/course.php",
 			function(data) {
-				console.log("cool");
 				course = data;
 				$("div#title").html(course.subj_abbr);
 			}
