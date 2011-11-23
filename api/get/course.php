@@ -1,4 +1,5 @@
 <?
+	echo $_GET["c"];
 	$c = explode(" ", $_GET["c"]);
 	$mySQLConnection = mysql_connect("localhost", "classer", "cl4ssy");
 	mysql_select_db("classer_tcnj", $mySQLConnection);
