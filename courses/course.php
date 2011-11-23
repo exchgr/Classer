@@ -5,7 +5,7 @@
 	$(document).ready(function() {
 		$.getJSON(
 			"/api/get/course.php",
-			function(data) {
+			function() {
 				console.log("something");
 				course = data;
 				$("div#title").html(data.subj_abbr);
