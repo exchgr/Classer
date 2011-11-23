@@ -3,6 +3,7 @@
 	var tab = "courses";
 	var course;
 	$(document).ready(function() {
+		console.log("awesome");
 		$.getJSON(
 			"/api/get/course.php",
 			function(data) {
