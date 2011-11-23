@@ -8,9 +8,7 @@
 	$(document).ready(function() {
 		$.getJSON(
 			"/api/get/course.php",
-			{
-				c: c
-			}
+			{ c: c },
 			function(json) {
 				console.log("something");
 				course = json;
