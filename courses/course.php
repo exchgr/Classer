@@ -8,7 +8,7 @@
 			function(data) {
 				console.log("something");
 				course = data;
-				$("div#title").html(data.subj_abbr);
+				$("div#title").html(course.subj_abbr);
 			}
 		);
 	});
