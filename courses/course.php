@@ -3,10 +3,6 @@
 	var tab = "courses";
 	var course;
 	$(document).ready(function() {
-		$.ajaxSetup ({
-			cache: false
-		});
-		
 		$.getJSON(
 			"/api/get/course.php",
 			function(data) {

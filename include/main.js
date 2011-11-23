@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	$.ajaxSetup ({
+		cache: false
+	});
 
 	$("#" + tab).addClass("active");
 
