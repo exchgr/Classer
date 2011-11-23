@@ -6,6 +6,7 @@
 		$.getJSON(
 			"/api/get/course.php",
 			function(data) {
+				console.log(data.subj_abbr);
 				course = data;
 				$("div#title").html(course.subj_abbr);
 			}
