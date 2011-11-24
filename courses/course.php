@@ -12,6 +12,7 @@
 			function(json) {
 				course = json;
 				$("#title").html(course.subjAbbr + " " + course.code + " &mdash; " + course.title);
+				$("head title").append(" | " + course.subjAbbr + " " + course.code + " &mdash; " + course.title);
 				$("#credits").html(course.credits);
 				$("#type").html(course.type);
 				$("#gradingType").html(course.gradingType);
@@ -19,7 +20,11 @@
 				$("#prereqs").html(course.prereqs);
 				$("#school").html(course.school);
 				$("#program").html(course.program);
-				$("#satisfies").html(course.satisfies);
+				$("#satisfies").html("<ul>");
+				for (var i = 0; i < course.satisfies.length; i++) {
+					$("#satisfies").append("<li>" + course.satisfies[i] + "</li>");
+				}
+				$("#satisfies").append("</ul>");
 				$("#description").html(course.description);
 			}
 		);

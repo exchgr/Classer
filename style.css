@@ -129,22 +129,22 @@ nav form#searchbar input[type=submit]:hover {
 
 .star {
 	display: inline-block;
-	background: url("/images/unstarred.png");
+	background: url("/images/starsprites.png") 0px 0px;
 	background-repeat: none;
 	height: 16px;
 	width: 16px;
 }
 
 .star:hover {
-	background: url("/images/unstarredhover.png");
+	background: url("/images/starsprites.png") -16px 0px;
 }
 
 .star.starred {
-	background: url("/images/starred.png");
+	background: url("/images/starsprites.png") 0px -16px;
 }
 
 .star.starred:hover {
-	background: url("/images/starredhover.png");
+	background: url("/images/starsprites.png") -16px -16px;
 }
 
 .course {
