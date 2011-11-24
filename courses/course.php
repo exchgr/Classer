@@ -12,6 +12,7 @@
 			function(json) {
 				course = json;
 				$("#title").html(course.subjAbbr + " " + course.code + " &mdash; " + course.title);
+				$("head title").append(" | " + course.subjAbbr + " " + course.code + " &mdash; " + course.title);
 				$("#credits").html(course.credits);
 				$("#type").html(course.type);
 				$("#gradingType").html(course.gradingType);
