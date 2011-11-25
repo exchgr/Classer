@@ -39,7 +39,7 @@
 	<div id="main">
 		<h2><div class="star"></div> <span id="title"></span></h2>
 		<div class="course">
-			<div class="info">
+			<section class="info">
 				<h2>Information</h2>
 				<table>
 					<tr>
@@ -75,12 +75,12 @@
 						<td><ul id="satisfies"></ul></td>
 					</tr>
 				</table>
-			</div><!--/.info-->
-			<div class="description">
+			</section><!--/.info-->
+			<section class="description">
 				<h2>Description</h2>
 				<div id="description"></div>
-			</div><!--/.description-->
-			<div class="sections">
+			</section><!--/.description-->
+			<section class="sections">
 				<h2>Sections</h2>
 				<table>
 					<thead>
@@ -99,7 +99,7 @@
 						<td><div class="star"></div></td><td>IMM 270-04</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>6 <span class="status open">open</span></td>
 					</tr><!--/.section-->
 				</table>
-			</div><!--/.sections-->
+			</section><!--/.sections-->
 		</div><!--/.course-->
 	</div><!--/#main-->
 </div><!--/.wrapper-->
