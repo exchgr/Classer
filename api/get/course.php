@@ -17,11 +17,14 @@
 		$course["satisfies"][] = $satisfies[0];
 	}
 
-	$course["prerequisites"] = mysql_fetch_assoc(
-		mysql_query(
-			"select prerequisiteSubjAbbr, prerequisiteCode from prerequisites where courseSubjAbbr = (select subjAbbr from courses where subjAbbr = '" . $course["subjAbbr"] . "' and code = '" . $course["code"] . "') and courseCode = (select code from courses where subjAbbr = '" . $course["subjAbbr"] . "' and code = '" . $course["code"] . "')"
-		)
-	);
+	$prerequisitesQuery = mysql_query("select prerequisiteSubjAbbr, prerequisiteCode from prerequisites where courseSubjAbbr = (select subjAbbr from courses where subjAbbr = '" . $course["subjAbbr"] . "' and code = '" . $course["code"] . "') and courseCode = (select code from courses where subjAbbr = '" . $course["subjAbbr"] . "' and code = '" . $course["code"] . "')");
+
+	$course["prerequisites"] = array(array());
+	while ($prerequisites = mysql_fetch_assoc($prerequisitesQuery)) {
+		for ($i = 0; $i < sizeof($prerequisites); $i++) {
+			$course["prerequisites"][$i][] = $prerequisites[$i];
+		}
+	}
 
 	echo json_encode($course);
 ?>
