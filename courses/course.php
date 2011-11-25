@@ -20,13 +20,15 @@
 				$("#prereqs").html(course.prereqs);
 				$("#school").html(course.school);
 				$("#program").html(course.program);
+				var satisfies;
 				for (var i = 0; i < course.satisfies.length; i++) {
-					$("#satisfies").append("<li");
+					satisfies += "<li";
 					if (i === (course.satisfies.length - 1)) {
-						$("#satisfies").append(" class=\"last\"");
+						satisfies += " class=\"last\"";
 					}
-					$("#satisfies").append(">" + course.satisfies[i] + "</li>");
+					satisfies += ">" + course.satisfies[i] + "</li>";
 				}
+				$("#satisfies").html(satisfies);
 				$("#description").html(course.description);
 			}
 		);
