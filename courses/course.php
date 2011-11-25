@@ -21,8 +21,8 @@
 				$("#school").html(course.school);
 				$("#program").html(course.program);
 				$("#satisfies").html("<ul>");
-				for (var i = 0; i < course.satisfies.length; i++) {
-					$("#satisfies").append("<li>" + course.satisfies[i] + "</li>");
+				for (var i = 0; i < course.satisfies[0].length; i++) {
+					$("#satisfies").append("<li>" + course.satisfies[0][i] + "</li>");
 				}
 				$("#satisfies").append("</ul>");
 				$("#description").html(course.description);
