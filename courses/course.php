@@ -21,7 +21,11 @@
 				$("#school").html(course.school);
 				$("#program").html(course.program);
 				for (var i = 0; i < course.satisfies.length; i++) {
-					$("#satisfies").append("<li>" + course.satisfies[i] + "</li>");
+					$("#satisfies").append("<li");
+					if (i === (course.satisfies.length - 1)) {
+						$("#satisfies").append(" class=\"last\"");
+					}
+					$("#satisfies").append(">" + course.satisfies[i] + "</li>");
 				}
 				$("#description").html(course.description);
 			}
