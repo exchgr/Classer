@@ -20,12 +20,8 @@
 				$("#prereqs").html(course.prereqs);
 				$("#school").html(course.school);
 				$("#program").html(course.program);
-				$("#satisfies").html("<ul>");
 				for (var i = 0; i < course.satisfies.length; i++) {
 					$("#satisfies").append("<li>" + course.satisfies[i] + "</li>");
-					if (i === (course.satisfies.length - 1)) { // because apparently jQuery is asynchronous?
-						$("#satisfies").append("</ul>");
-					}
 				}
 				$("#description").html(course.description);
 			}
@@ -70,7 +66,7 @@
 					</tr>
 					<tr>
 						<th>Satisfies</th>
-						<td id="satisfies"></td>
+						<td><ul id="satisfies"></ul></td>
 					</tr>
 				</table>
 			</div><!--/.info-->
