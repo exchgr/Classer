@@ -10,6 +10,7 @@
 			"/api/get/course.php",
 			{ c: c },
 			function(json) {
+				var i = 0;
 				course = json;
 				$("#title").html(course.subjAbbr + " " + course.code + " &mdash; " + course.title);
 				$("head title").append(" | " + course.subjAbbr + " " + course.code + " &mdash; " + course.title);
@@ -18,21 +19,21 @@
 				$("#gradingType").html(course.gradingType);
 				$("#offered").html(course.offered);
 
-				/*var prerequisites = "";
-				for (var i = 0; i < course.prerequisites.length; i++) {
+				var prerequisites = "";
+				for (i = 0; i < course.prerequisites.length; i++) {
 					prerequisites += "<li";
 					if (i === (course.prerequisites.length - 1)) {
 						prerequisites += " class=\"last\"";
 					}
 					prerequisites += ">" + course.prerequisites[0][i] + " " + course.prerequisites[1][i] "</li>";
 				}
-				$("#prerequisites").html(prerequisites);*/
+				$("#prerequisites").html(prerequisites);
 				
 				$("#school").html(course.school);
 				$("#program").html(course.program);
 				
 				var satisfies = "";
-				for (var i = 0; i < course.satisfies.length; i++) {
+				for (i = 0; i < course.satisfies.length; i++) {
 					satisfies += "<li";
 					if (i === (course.satisfies.length - 1)) {
 						satisfies += " class=\"last\"";
