@@ -20,7 +20,7 @@
 				$("#prereqs").html(course.prereqs);
 				$("#school").html(course.school);
 				$("#program").html(course.program);
-				var satisfies;
+				var satisfies = "";
 				for (var i = 0; i < course.satisfies.length; i++) {
 					satisfies += "<li";
 					if (i === (course.satisfies.length - 1)) {
