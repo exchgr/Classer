@@ -23,7 +23,7 @@
 	while ($prerequisites = mysql_fetch_assoc($prerequisitesQuery)) {
 		$course["prerequisites"][0][] = $prerequisites[0];
 		$course["prerequisites"][1][] = $prerequisites[1];
-		print_r($prerequisites . "\n");
+		print_r($prerequisites[0] . "\n");
 	}
 
 	echo json_encode($course);
