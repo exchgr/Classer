@@ -10,11 +10,10 @@
 		)
 	);
 
+	$satisfiesQuery = mysql_query("select satisfies from courses_satisfies where subjAbbr = (select subjAbbr from courses where subjAbbr = 'IMM' and code = '270') and code = (select code from courses where subjAbbr = 'IMM' and code = '270')");
+
 	$course["satisfies"] = array();
-	while ($satisfies = mysql_fetch_array(
-		mysql_query("select satisfies from courses_satisfies where subjAbbr = (select subjAbbr from courses where subjAbbr = 'IMM' and code = '270') and code = (select code from courses where subjAbbr = 'IMM' and code = '270')")
-		)
-	) {
+	while ($satisfies = mysql_fetch_array($satisfiesQuery)) {
 		$course["satisfies"][] = $satisfies[0];
 	}
 
