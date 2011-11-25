@@ -17,9 +17,8 @@
 	}
 
 	$prerequisitesQuery = mysql_query("select prerequisiteSubjAbbr, prerequisiteCode from prerequisites where courseSubjAbbr = (select subjAbbr from courses where subjAbbr = '" . $course["subjAbbr"] . "' and code = '" . $course["code"] . "') and courseCode = (select code from courses where subjAbbr = '" . $course["subjAbbr"] . "' and code = '" . $course["code"] . "')");
-	$course["prerequisites"] = array(array());
-	$i = 0;
-	while ($prerequisite = mysql_fetch_assoc($prerequisitesQuery)) {
+	$course["prerequisites"] = array();
+	while ($prerequisite = mysql_fetch_array($prerequisitesQuery)) {
 		$course["prerequisites"][] = $prerequisite;
 	}
 
