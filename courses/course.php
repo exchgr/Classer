@@ -23,8 +23,10 @@
 				$("#satisfies").html("<ul>");
 				for (var i = 0; i < course.satisfies.length; i++) {
 					$("#satisfies").append("<li>" + course.satisfies[i] + "</li>");
+					if (i === (course.satisfies.length - 1)) { // because apparently jQuery is asynchronous?
+						$("#satisfies").append("</ul>");
+					}
 				}
-				$("#satisfies").append("</ul>");
 				$("#description").html(course.description);
 			}
 		);

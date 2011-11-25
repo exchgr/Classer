@@ -184,6 +184,11 @@ nav form#searchbar input[type=submit]:hover {
 	font-weight: normal;
 }
 
+#satisfies ul, #satisfies ul li {
+	margin: 0px;
+	padding: 0px;
+}
+
 .description {
 	float: right;
 	width: 570px;
