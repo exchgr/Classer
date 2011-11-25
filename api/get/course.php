@@ -23,6 +23,7 @@
 	while ($prerequisites = mysql_fetch_assoc($prerequisitesQuery)) {
 		for ($i = 0; $i < sizeof($prerequisites); $i++) {
 			$course["prerequisites"][$i][] = $prerequisites[$i];
+			echo $prerequisites[$i];
 		}
 	}
 
