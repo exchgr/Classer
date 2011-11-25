@@ -10,9 +10,13 @@
 		)
 	);
 
-	$course["satisfies"] = mysql_fetch_assoc(
+	$satisfies = mysql_fetch_assoc(
 		mysql_query("select satisfies from courses_satisfies where subjAbbr = (select subjAbbr from courses where subjAbbr = 'IMM' and code = '270') and code = (select code from courses where subjAbbr = 'IMM' and code = '270')")
 	);
+
+	for($i = 0; $i < $satisfies[0].length; $i++) {
+		$course["satisfies"][i] = $satisfies[0][i];
+	}
 
 	echo json_encode($course);
 ?>
