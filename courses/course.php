@@ -17,9 +17,20 @@
 				$("#type").html(course.type);
 				$("#gradingType").html(course.gradingType);
 				$("#offered").html(course.offered);
-				$("#prereqs").html(course.prereqs);
+
+				var prerequisites = "";
+				for (var i = 0; i < course.prerequisites.length; i++) {
+					prerequisites += "<li";
+					if (i === (course.prerequisites.length - 1)) {
+						prerequisites += " class=\"last\"";
+					}
+					prerequisites += ">" + course.prerequisites[0][i] + " " + course.prerequisites[1][i] "</li>";
+				}
+				$("#prerequisites").html(prerequisites);
+				
 				$("#school").html(course.school);
 				$("#program").html(course.program);
+				
 				var satisfies = "";
 				for (var i = 0; i < course.satisfies.length; i++) {
 					satisfies += "<li";
@@ -29,6 +40,7 @@
 					satisfies += ">" + course.satisfies[i] + "</li>";
 				}
 				$("#satisfies").html(satisfies);
+				
 				$("#description").html(course.description);
 			}
 		);
@@ -60,7 +72,7 @@
 					</tr>
 					<tr>
 						<th>Prerequisites</th>
-						<td id="prereqs"></td>
+						<td id="prerequisites"></td>
 					</tr>
 					<tr>
 						<th>School</th>
