@@ -18,7 +18,7 @@
 				$("#gradingType").html(course.gradingType);
 				$("#offered").html(course.offered);
 
-				var prerequisites = "";
+				/*var prerequisites = "";
 				for (var i = 0; i < course.prerequisites.length; i++) {
 					prerequisites += "<li";
 					if (i === (course.prerequisites.length - 1)) {
@@ -26,7 +26,7 @@
 					}
 					prerequisites += ">" + course.prerequisites[0][i] + " " + course.prerequisites[1][i] "</li>";
 				}
-				$("#prerequisites").html(prerequisites);
+				$("#prerequisites").html(prerequisites);*/
 				
 				$("#school").html(course.school);
 				$("#program").html(course.program);
