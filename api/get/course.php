@@ -21,10 +21,9 @@
 
 	$course["prerequisites"] = array(array());
 	while ($prerequisites = mysql_fetch_assoc($prerequisitesQuery)) {
-		for ($i = 0; $i < sizeof($prerequisites); $i++) {
-			$course["prerequisites"][$i][] = $prerequisites[$i];
-			echo $prerequisites[$i];
-		}
+		$course["prerequisites"][0][] = $prerequisites[0];
+		$course["prerequisites"][1][] = $prerequisites[1];
+		print_r($prerequisites . "\n");
 	}
 
 	echo json_encode($course);
