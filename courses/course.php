@@ -23,9 +23,9 @@
 				for (i = 0; i < course.prerequisites.length; i++) {
 					prerequisites += "<li";
 					if (i === (course.prerequisites.length - 1)) {
-						//prerequisites += " class=\"last\"";
+						prerequisites += " class=\"last\"";
 					}
-					prerequisites += ">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] "</li>";
+					prerequisites += ">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] + "</li>";
 				}
 				$("#prerequisites").html(prerequisites);
 				
