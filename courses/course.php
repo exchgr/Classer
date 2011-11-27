@@ -25,7 +25,7 @@
 					if (i === (course.prerequisites.length - 1)) {
 						prerequisites += " class=\"last\"";
 					}
-					prerequisites += ">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] + "</li>";
+					prerequisites += "><a href=\"/courses/course.php?c=" + course.prerequisites[i][0] + "+" + course.prerequisites[i][1] + "\">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] + "</a></li>";
 				}
 				$("#prerequisites").html(prerequisites);
 				
@@ -73,7 +73,7 @@
 					</tr>
 					<tr>
 						<th>Prerequisites</th>
-						<td id="prerequisites"></td>
+						<td><ul id="prerequisites"></ul>IMPLEMENT TAKEN COURSES</td>
 					</tr>
 					<tr>
 						<th>School</th>
