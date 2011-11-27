@@ -184,17 +184,17 @@ nav form#searchbar input[type=submit]:hover {
 	font-weight: normal;
 }
 
-.info ul, {
+ul#satisfies, ul#prerequisites {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-.info ul li, {
+ul#satisfies li, ul#prerequisites li {
 	margin: 0px 0px 5px 0px;
 }
 
-.info ul li.last, {
+ul#satisfies li.last, ul#prerequisites li.last {
 	margin: 0px;
 }
 
