@@ -184,17 +184,17 @@ nav form#searchbar input[type=submit]:hover {
 	font-weight: normal;
 }
 
-#info ul, {
+.info ul, {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
 
-#info ul li, {
+.info ul li, {
 	margin: 0px 0px 5px 0px;
 }
 
-#info ul li.last, {
+.info ul li.last, {
 	margin: 0px;
 }
 
