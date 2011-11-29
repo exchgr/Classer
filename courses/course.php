@@ -73,7 +73,7 @@
 					</tr>
 					<tr>
 						<th>Prerequisites</th>
-						<td><ul id="prerequisites"></ul>IMPLEMENT TAKEN COURSES</td>
+						<td><ul id="prerequisites"></ul><!--IMPLEMENT TAKEN COURSES--></td>
 					</tr>
 					<tr>
 						<th>School</th>
