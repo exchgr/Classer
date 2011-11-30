@@ -8,12 +8,12 @@
 
 	$hash = mysql_fetch_array(
 		mysql_query(
-			"select password from users where email = " . $email . " and password = " . $password
+			"select password from users where email = '" . $email . "'' and password = '" . $password . "'"
 		),
 		MYSQL_NUM
-	);
+	)[0];
 
 	mysql_close($mySQLConnection);
 
-	echo "still works" . $hash[0];
+	echo "still works" . $hash;
 ?>
