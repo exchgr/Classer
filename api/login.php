@@ -10,14 +10,13 @@
 		return $array[0];
 	}
 
-	$hash = mysql_fetch_array(
+	$hash = mysql_fetch_assoc(
 		mysql_query(
 			"select password from users where email = '" . $email . "'' and password = '" . md5($password) . "'"
-		),
-		MYSQL_NUM
+		)
 	);
 
 	mysql_close($mySQLConnection);
 
-	echo $hash[0];
+	echo $hash["password"];
 ?>
