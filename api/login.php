@@ -21,5 +21,11 @@
 
 	mysql_close($mySQLConnection);
 
-	echo $hash;
+	$token = md5($email . $password . $time);
+
+	if ($hash === md5($password)) {
+		echo json_encode(array("token" => $token, "time" => $time));
+	} else {
+		echo json_encode(null);
+	}
 ?>
