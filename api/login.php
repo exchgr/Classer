@@ -1,7 +1,6 @@
-<?
-	echo "awesome";
-	$email = rawurldecode($_GET["email"]);
-	$password = rawurldecode($_GET["password"]);
+<html><body> goop<?
+	$email = $_GET["email"];
+	$password = $_GET["password"];
 	$time = date("c");
 
 	$mySQLConnection = mysql_connect("localhost", "classer", "cl4ssy");
@@ -14,9 +13,6 @@
 		MYSQL_NUM
 	)[0];
 
-	echo "twinkies";
-	echo $hash;
-
 	mysql_close($mySQLConnection);
 
 	if ($hash === md5($password)) {
@@ -25,4 +21,4 @@
 	} else {
 		echo "null";
 	}
-?>
+?></body></html>
