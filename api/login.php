@@ -19,6 +19,8 @@
 		)
 	);
 
+	echo "select password from users where email = '" . $email . "'' and password = '" . md5($password) . "'";
+
 	mysql_close($mySQLConnection);
 
 	echo $hash;
