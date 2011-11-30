@@ -1,4 +1,6 @@
 <?
+	error_reporting(-1);
+	
 	$email = rawurldecode($_GET["email"]);
 	$password = rawurldecode($_GET["password"]);
 	$time = date("c");
