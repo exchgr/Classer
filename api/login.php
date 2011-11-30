@@ -11,7 +11,7 @@
 			"select password from users where email = " . $email . " and password = " . $password
 		),
 		MYSQL_NUM
-	)[0];
+	);
 
 	mysql_close($mySQLConnection);
 
