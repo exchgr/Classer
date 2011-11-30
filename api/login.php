@@ -15,5 +15,5 @@
 
 	mysql_close($mySQLConnection);
 
-	echo "still works" . $hash;
+	echo "still works" . $hash[0];
 ?>
