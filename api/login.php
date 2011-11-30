@@ -13,13 +13,11 @@
 	$hash = value(
 		mysql_fetch_array(
 			mysql_query(
-				"select password from users where email = '" . $email . "'' and password = '" . md5($password) . "'"
+				"select password from users where email = '" . $email . "' and password = '" . md5($password) . "'"
 			),
 			MYSQL_NUM
 		)
 	);
-
-	echo "select password from users where email = '" . $email . "'' and password = '" . md5($password) . "'";
 
 	mysql_close($mySQLConnection);
 
