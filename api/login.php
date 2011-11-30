@@ -1,4 +1,5 @@
 <?
+	echo "awesome";
 	$email = rawurldecode($_GET["email"]);
 	$password = rawurldecode($_GET["password"]);
 	$time = date("c");
@@ -11,7 +12,7 @@
 			"select password from users where email = " . $email . " and password = " . $password
 		),
 		MYSQL_NUM
-	)[0] or die("here");
+	)[0];
 
 	echo "twinkies";
 	echo $hash;
