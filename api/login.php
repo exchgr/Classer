@@ -13,11 +13,8 @@
 		MYSQL_NUM
 	)[0];
 
-<<<<<<< HEAD
 	echo $hash;
 
-=======
->>>>>>> 0eebbd23aa7a1968ba9c65143041e6ce2547e3e7
 	mysql_close($mySQLConnection);
 
 	if ($hash === md5($password)) {
