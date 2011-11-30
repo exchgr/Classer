@@ -7,7 +7,7 @@
 	mysql_select_db("classer_tcnj", $mySQLConnection);
 
 	function value($array) {
-		return $array[0][0];
+		return $array[0];
 	}
 
 	$hash = value(
