@@ -6,7 +6,7 @@
 
 	$course = mysql_fetch_assoc(
 		mysql_query(
-			"SELECT * FROM `courses` WHERE `subjAbbr` = '" . $c[0] . "' AND `code` = '" . $c[1] . "' LIMIT 1"
+			"select * from `courses` where `subjAbbr` = '" . $c[0] . "' and `code` = '" . $c[1] . "'"
 		)
 	);
 
