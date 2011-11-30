@@ -6,12 +6,18 @@
 	$mySQLConnection = mysql_connect("localhost", "classer", "cl4ssy");
 	mysql_select_db("classer_tcnj", $mySQLConnection);
 
-	$hash = mysql_fetch_array(
-		mysql_query(
-			"select password from users where email = '" . $email . "'' and password = '" . md5($password) . "'"
-		),
-		MYSQL_NUM
-	)[0];
+	function value($array){
+		return $array[0];
+	}
+
+	$hash = value(
+		mysql_fetch_array(
+			mysql_query(
+				"select password from users where email = '" . $email . "'' and password = '" . md5($password) . "'"
+			),
+			MYSQL_NUM
+		)
+	);
 
 	mysql_close($mySQLConnection);
 
