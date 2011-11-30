@@ -25,6 +25,9 @@
 
 	if ($hash === md5($password)) {
 		echo json_encode(array("token" => $token, "time" => $time));
+		mysql_query (
+			"update users set token = '" . $token . "', time = '" . $time . "' where email = '" . $email . "' and password = '" . md5($password) . "'"
+		);
 	} else {
 		echo json_encode(null);
 	}
