@@ -8,7 +8,7 @@
 
 	$hash = mysql_fetch_array(
 		mysql_query(
-			"select password from users where email = '" . $email . "'' and password = '" . $password . "'"
+			"select password from users where email = '" . $email . "'' and password = '" . md5($password) . "'"
 		),
 		MYSQL_NUM
 	)[0];
