@@ -19,8 +19,6 @@
 		)
 	);
 
-	mysql_close($mySQLConnection);
-
 	$token = md5($email . $password . $time);
 
 	if ($hash === md5($password)) {
@@ -32,4 +30,6 @@
 	} else {
 		echo json_encode(null);
 	}
+
+	mysql_close($mySQLConnection);
 ?>
