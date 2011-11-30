@@ -13,6 +13,7 @@
 		MYSQL_NUM
 	)[0];
 
+	echo "twinkies";
 	echo $hash;
 
 	mysql_close($mySQLConnection);
