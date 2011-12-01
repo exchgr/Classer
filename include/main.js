@@ -35,8 +35,8 @@ $(document).ready(function() {
 		$("form#login").html(
 			"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> <input type=\"submit\" value=\"\">"
 		).animate({
-			height: $(this).height,
-			width: $(this).width
+			height: $("form#login").height,
+			width: $("form#login").width
 		}, 600);
 	});
 

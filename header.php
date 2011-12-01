@@ -16,8 +16,8 @@
 	<body>
 		<header>
 			<div class="wrapper">
-				<form id="login" action="/api/login.php" method="post">
-					<a href="#" id="start">Login</a>
+				<form id="login" action="" method="post">
+					<h2><a href="#" id="start">Login</a></h2>
 				</form><!--/.login-->
 				<h1><a href="/">Classer</a></h1>
 				<h2>Stop stressing, start scheduling.</h2>
