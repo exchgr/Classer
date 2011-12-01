@@ -35,9 +35,10 @@ $(document).ready(function() {
 		$("form#login").html(
 			"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> <input type=\"submit\" value=\"\">"
 		);
+		return false;
 	});
 
-	$("form#login input[type=submit]").click(function() {
+	$("form#login").submit(function() {
 		alert("awesome");
 		return false;
 	});
