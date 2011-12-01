@@ -26,7 +26,7 @@
 		mysql_query (
 			"update users set token = '" . $token . "', loginTime = '" . $time . "' where email = '" . $email . "' and password = '" . md5($password) . "'"
 		);
-		echo "update users set token = '" . $token . "', loginTime = '" . $time . "' where email = '" . $email . "' and password = '" . md5($password) . "'";
+		echo "";
 	} else {
 		echo json_encode(null);
 	}
