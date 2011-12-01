@@ -111,6 +111,7 @@ nav form#searchbar {
 
 header form#login {
 	float: right;
+	margin-top: 4px;
 }
 
 nav form#searchbar input[type=text], header form#login input[type=text], header form#login input[type=password] {
