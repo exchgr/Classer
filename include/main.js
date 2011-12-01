@@ -35,14 +35,10 @@ $(document).ready(function() {
 		$("form#login").html(
 			"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> <input type=\"submit\" value=\"\">"
 		);
-		$("form#login").animate({
-			height: $("form#login").height,
-			width: $("form#login").width
-		}, 600);
 	});
 
 	$("form#login input[type=submit]").click(function() {
-		
+		alert("awesome");
 	});
 
 	$(".star").click(function() {
