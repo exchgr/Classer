@@ -16,24 +16,24 @@
 	<body>
 		<header>
 			<div class="wrapper">
-				<h1><a href="/">Classer</a></h1>
-				<h2>Stop stressing, start scheduling.</h2>
 				<form id="login" action="/api/login.php" method="get">
 					<a href="#" id="start">Login</a>
 				</form><!--/.login-->
+				<h1><a href="/">Classer</a></h1>
+				<h2>Stop stressing, start scheduling.</h2>
 			</div><!--/.wrapper-->
 		</header>
 		
 		<nav>
 			<div class="wrapper">
+				<form id="searchbar">
+					<input type="text" value="Search" class="grey" id="search" />
+					<input type="submit" value="" />
+				</form><!--/#searchbar-->
 				<ul>
 					<li id="courses"><a href="/courses/">Courses</a></li>
 					<li id="tuition"><a href="#">Tuition</a></li>
 					<li id="yourInfo"><a href="#">Your Info</a></li>
 				</ul>
-				<form id="searchbar">
-					<input type="text" value="Search" class="grey" id="search" />
-					<input type="submit" value="" />
-				</form><!--/#searchbar-->
 			</div><!--/.wrapper-->
 		</nav>	
