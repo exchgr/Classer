@@ -17,9 +17,9 @@ $(document).ready(function() {
 		}
 	});
 
-	$("form#login #username").blur(function() {
+	$("form#login #email").blur(function() {
 		if ($(this).attr("value") === "") {
-			$(this).attr("value", "Username");
+			$(this).attr("value", "E-Mail");
 			$(this).addClass("grey");
 		}
 	});
@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 	$("form#login #start").click(function() {
 		$("form#login").html(
-			"<input type=\"text\" class=\"grey\" id=\"username\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" value=\"Password\"> <input type=\"submit\" value=\"\">"
+			"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> <input type=\"submit\" value=\"\">"
 		);
 	});
 });

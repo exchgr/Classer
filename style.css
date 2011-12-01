@@ -131,12 +131,20 @@ nav form#searchbar input[type=submit], header form#login input[type=submit] {
 	vertical-align: text-top;
 }
 
-nav form#searchbar input[type=submit] {
-	background: #3584FF url("/images/search.png");
+form input[type=submit]{
+	background-color: #3584FF;
 }
 
-nav form#searchbar input[type=submit]:hover {
-	background: #FF4D36 url("/images/search.png");
+form input[type=submit]:hover{
+	background-color: #FF4D36;
+}
+
+nav form#searchbar input[type=submit] {
+	background-image: url("/images/search.png");
+}
+
+header form#login input[type=submit] {
+	
 }
 
 /* Courses */
