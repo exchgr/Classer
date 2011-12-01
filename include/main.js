@@ -39,6 +39,7 @@ $(document).ready(function() {
 
 	$("form#login input[type=submit]").click(function() {
 		alert("awesome");
+		return false;
 	});
 
 	$(".star").click(function() {
