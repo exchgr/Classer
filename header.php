@@ -16,7 +16,7 @@
 	<body>
 		<header>
 			<div class="wrapper">
-				<form id="login" action="" method="post">
+				<form id="login" action="#" method="post">
 					<h2><a href="#" id="start">Login</a></h2>
 				</form><!--/.login-->
 				<h1><a href="/">Classer</a></h1>
