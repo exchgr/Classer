@@ -31,13 +31,20 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".star").click(function() {
-		$(this).toggleClass("starred");
-	});
-
 	$("form#login #start").click(function() {
 		$("form#login").html(
 			"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> <input type=\"submit\" value=\"\">"
-		);
+		).animate({
+			height: $(this).height;
+			width: $(this).width;
+		}, 600);
+	});
+
+	$("form#login input[type=submit]").click(function() {
+		
+	});
+
+	$(".star").click(function() {
+		$(this).toggleClass("starred");
 	});
 });
