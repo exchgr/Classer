@@ -16,7 +16,7 @@
 	<body>
 		<header>
 			<div class="wrapper">
-				<form id="login" action="/api/login.php" method="get">
+				<form id="login" action="/api/login.php" method="post">
 					<a href="#" id="start">Login</a>
 				</form><!--/.login-->
 				<h1><a href="/">Classer</a></h1>

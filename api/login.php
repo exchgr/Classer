@@ -1,6 +1,6 @@
 <?
-	$email = $_GET["email"];
-	$password = $_GET["password"];
+	$email = $_POST["email"];
+	$password = $_POST["password"];
 	$time = date("c");
 
 	$mySQLConnection = mysql_connect("localhost", "classer", "cl4ssy");
