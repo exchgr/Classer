@@ -18,6 +18,9 @@
 			<div class="wrapper">
 				<h1><a href="/">Classer</a></h1>
 				<h2>Stop stressing, start scheduling.</h2>
+				<form id="login" action="/api/login.php" method="get">
+					<a href="#" id="start">Login</a>
+				</form><!--/.login-->
 			</div><!--/.wrapper-->
 		</header>
 		
