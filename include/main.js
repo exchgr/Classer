@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 	$("form#login #start").click(function() {
 		$("form#login").html(
-			"<input type=\"text\" class=\"grey\" id=\"username\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" value=\"Password\"><input type=\"submit\" value=\"\">"
+			"<input type=\"text\" class=\"grey\" id=\"username\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" value=\"Password\"> <input type=\"submit\" value=\"\">"
 		);
 	});
 });
