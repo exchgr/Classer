@@ -63,7 +63,7 @@ $(document).ready(function() {
 	$("form#login").submit(function() {
 		$.ajax({
 			type: "POST",
-			url: "/api/login.php",
+			url: "/api/login/login.php",
 			data: "email=" + $("input#email").val() + "&password=" + $("input#password").val(),
 			success: function(json) {
 				var data = $.parseJSON(json);
