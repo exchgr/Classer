@@ -6,10 +6,11 @@ $(document).ready(function() {
 	$.ajax({
 		type: "POST",
 		url: "api/login/validate.php",
-		data: "token=" + localStorage.login.token;
+		data: "token=" + localStorage.login.token,
 		success: function(json) {
-			var data = $.parseJSON(json);
-			if (data === true) {
+			var token = $.parseJSON(json);
+			alert(token);
+			if (token === localStorage.login.token) {
 				$("form#login").html(localStorage.login.email);
 			} else {
 				$("form#login").html("<a href=\"#\" id=\"start\">Login</a>");
