@@ -17,5 +17,7 @@
 		)
 	);
 
+	mysql_close($mySQLConnection);
+
 	echo json_encode($dbToken);
 ?>

@@ -6,21 +6,31 @@ $(document).ready(function() {
 	var login = JSON.parse(localStorage.login);
 	if (!login) {
 		login = {"token": "", "email": ""};
+		localStorage.login = JSON.stringify(login);
 	}
+
 	$.ajax({
 		type: "POST",
 		url: "/api/login/validate.php",
 		data: "token=" + login.token,
 		success: function(json) {
 			var token = JSON.parse(json);
-			alert("validation: " + token);
 			if (token === login.token) {
-				$("form#login").html(login.email);
+				$("form#login").html(login.email + " <a href=\"#\" id=\"logout\">Log Out</a>");
+				$("form#login #logout").click(function() {
+					$.ajax({
+						type: "POST",
+						url: "/api/login/logout.php",
+						data: "token=" + login.token;
+						success: function() {
+							window.location.reload();
+						}
+					});
+				});
 			} else {
-				$("form#login").html("<a href=\"#\" id=\"start\">Login</a>");
-				// Problem: jQuery apparently doesn't recognize this change, and
-				// completely ignores the fact that #start now exists. Also,
-				// this is why the .grey manips don't work in form#login.
+				login = {"token": "", "email": ""};
+				localStorage.login = JSON.stringify(login);
+				$("form#login").html("<a href=\"#\" id=\"start\">Log In</a>");
 				$("form#login #start").click(function() {
 					$("form#login").html(
 						"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\">" + 
@@ -51,16 +61,11 @@ $(document).ready(function() {
 							data: "email=" + $("input#email").val() + "&password=" + $("input#password").val(),
 							success: function(json) {
 								var data = JSON.parse(json);
-								var login = {"email": $("input#email").val(), "token": data.token}
+								login = {"email": $("input#email").val(), "token": data.token};
 								localStorage.login = JSON.stringify(login);
-
-								var logintest = JSON.parse(localStorage.login);
-								alert("login: " + logintest.token + " " + data.token + " " + 
-									logintest.email
-								);
 								window.location.reload();
 							}
-						})
+						});
 						return false;
 					});
 					return false;
