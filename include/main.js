@@ -44,7 +44,9 @@ $(document).ready(function() {
 			url: "/api/login.php",
 			data: "email=" + $("input#email").val() + "&password=" + $("input#password").val(),
 			success: function(json) {
-				alert(json);
+				data = parseJSON(json);
+				localStorage.token = data.token;
+				alert(localStorage.token);
 			}
 		})
 		return false;
