@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-	color: #FF4D36;
+	color: #FF4D36 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
