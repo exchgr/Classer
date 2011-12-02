@@ -16,9 +16,11 @@
 	<body>
 		<header>
 			<div class="wrapper">
-				<form id="login" action="">
-					<h2><a href="#" id="start">Login</a></h2>
-				</form><!--/.login-->
+				<div class="right">
+					<form id="login" action="">
+						<a href="#" id="start">Login</a>
+					</form><!--/.login-->
+				</div><!--/.right-->
 				<h1><a href="/">Classer</a></h1>
 				<h2>Stop stressing, start scheduling.</h2>
 			</div><!--/.wrapper-->

@@ -39,7 +39,14 @@ $(document).ready(function() {
 	});
 
 	$("form#login").submit(function() {
-		alert("awesome");
+		$.ajax({
+			type: "POST",
+			url: "/api/login.php",
+			data: "email=" + $("input#email").val() + "&password=" + $("input#password").val(),
+			success: function(json) {
+				alert(json);
+			}
+		})
 		return false;
 	});
 

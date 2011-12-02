@@ -9,6 +9,10 @@ body {
 	font-size: small;
 }
 
+div.right {
+	float: right;
+}
+
 a {
 	color: #3584FF;
 	text-decoration: none;
@@ -109,9 +113,14 @@ nav form#searchbar {
 }
 
 header form#login {
-	float: right;
-	position: relative;
-	vertical-align: text-bottom;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	text-align: right;
+}
+
+header form#login a {
+	color: #eeeeee;
 }
 
 nav form#searchbar input[type=text], header form#login input[type=text], header form#login input[type=password] {
