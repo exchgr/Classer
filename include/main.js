@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	$.ajax({
 		type: "POST",
-		url: "api/login/validate.php",
+		url: "/api/login/validate.php",
 		data: "token=" + localStorage.login.token,
 		success: function(json) {
 			var token = $.parseJSON(json);
