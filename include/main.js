@@ -4,6 +4,9 @@ $(document).ready(function() {
 	});
 
 	var login = JSON.parse(localStorage.login);
+	if (!login) {
+		login = {"token": "", "email": ""};
+	}
 	$.ajax({
 		type: "POST",
 		url: "/api/login/validate.php",
