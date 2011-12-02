@@ -21,7 +21,7 @@ $(document).ready(function() {
 					$.ajax({
 						type: "POST",
 						url: "/api/login/logout.php",
-						data: "token=" + login.token;
+						data: "token=" + login.token,
 						success: function() {
 							window.location.reload();
 						}
