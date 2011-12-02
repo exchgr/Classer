@@ -116,7 +116,7 @@ nav form#searchbar {
 
 header form#login {
 	position: absolute;
-	bottom: 0px;
+	bottom: -5px;
 	right: 0px;
 }
 
@@ -125,7 +125,7 @@ header form#login a {
 }
 
 nav form#searchbar input[type=text], header form#login input[type=text], header form#login input[type=password] {
-	margin: 5px 0px 0px 0px;
+	margin: 0px 0px 5px 0px;
 	padding: 5px 10px;
 	border: 0px;
 	border-radius: 100px;
