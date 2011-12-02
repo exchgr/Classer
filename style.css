@@ -12,7 +12,8 @@ body {
 /*div.right {
 	position: relative;
 	float: right;
-}*/
+} 
+*/
 
 a {
 	color: #3584FF;
@@ -69,6 +70,14 @@ header {
 
 header h1 {
 	text-shadow: 0px 2px 2px #000;
+}
+
+header a, nav a {
+	color: #5C9AFF;
+}
+
+nav .active a {
+	color: #3584FF;
 }
 
 nav {
