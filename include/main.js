@@ -3,15 +3,16 @@ $(document).ready(function() {
 		cache: false
 	});
 
+	var login = JSON.parse(localStorage.login);
 	$.ajax({
 		type: "POST",
 		url: "/api/login/validate.php",
-		data: "token=" + localStorage.login.token,
+		data: "token=" + login.token,
 		success: function(json) {
-			var token = $.parseJSON(json);
+			var token = JSON.parse(json);
 			alert("validation: " + token);
-			if (token === localStorage.login.token) {
-				$("form#login").html(localStorage.login.email);
+			if (token === login.token) {
+				$("form#login").html(login.email);
 			} else {
 				$("form#login").html("<a href=\"#\" id=\"start\">Login</a>");
 				// Problem: jQuery apparently doesn't recognize this change, and
@@ -46,11 +47,13 @@ $(document).ready(function() {
 							url: "/api/login/login.php",
 							data: "email=" + $("input#email").val() + "&password=" + $("input#password").val(),
 							success: function(json) {
-								var data = $.parseJSON(json);
-								localStorage.login.email = $("input#email").val();
-								localStorage.login.token = data.token;
-								alert("login: " + localStorage.login.token + " " + data.token + " " + 
-									localStorage.login.email
+								var data = JSON.parse(json);
+								var login = {"email": $("input#email").val(), "token": data.token}
+								localStorage.login = JSON.stringify(login);
+
+								var logintest = JSON.parse(localStorage.login);
+								alert("login: " + logintest.token + " " + data.token + " " + 
+									logintest.email
 								);
 								window.location.reload();
 							}
