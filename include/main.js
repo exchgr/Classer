@@ -9,7 +9,7 @@ $(document).ready(function() {
 		data: "token=" + localStorage.login.token,
 		success: function(json) {
 			var token = $.parseJSON(json);
-			alert(token);
+			alert("validation: " + token);
 			if (token === localStorage.login.token) {
 				$("form#login").html(localStorage.login.email);
 			} else {
@@ -69,6 +69,7 @@ $(document).ready(function() {
 				var data = $.parseJSON(json);
 				localStorage.login.email = $("input#email").val();
 				localStorage.login.token = data.token;
+				alert("login: " + localStorage.login.token);
 				window.location.reload();
 			}
 		})
