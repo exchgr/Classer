@@ -3,6 +3,20 @@ $(document).ready(function() {
 		cache: false
 	});
 
+	$.ajax({
+		type: "POST",
+		url: "api/login/validate.php",
+		data: "token=" + localStorage.login.token;
+		success: function(json) {
+			var data = $.parseJSON(json);
+			if (data === true) {
+				$("form#login").html(localStorage.login.email);
+			} else {
+				$("form#login").html("<a href=\"#\" id=\"start\">Login</a>");
+			}
+		}
+	});
+
 	$("#" + tab).addClass("active");
 
 	$(".grey").focus(function() {
@@ -33,7 +47,9 @@ $(document).ready(function() {
 
 	$("form#login #start").click(function() {
 		$("form#login").html(
-			"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\"><br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> <input type=\"submit\" value=\"\">"
+			"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\">" + 
+			"<br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> " + 
+			"<input type=\"submit\" value=\"\">"
 		);
 		return false;
 	});
@@ -44,9 +60,10 @@ $(document).ready(function() {
 			url: "/api/login.php",
 			data: "email=" + $("input#email").val() + "&password=" + $("input#password").val(),
 			success: function(json) {
-				data = $.parseJSON(json);
-				localStorage.token = data.token;
-				alert(localStorage.token);
+				var data = $.parseJSON(json);
+				localStorage.login.email = $("input#email").val();
+				localStorage.login.token = data.token;
+				window.location.reload();
 			}
 		})
 		return false;
