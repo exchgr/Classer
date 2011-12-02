@@ -6,11 +6,10 @@
 	var c = "<? echo $_GET["c"]; ?>";
 	var course;
 	$(document).ready(function() {
-		$.ajax({
-			type: "GET",
-			url: "/api/get/course.php",
-			data: "c=" + c,
-			success: function(json) {
+		$.getJSON(
+			"/api/get/course.php",
+			{ c: c },
+			function(json) {
 				var i = 0;
 				course = json;
 				$("#title").html(course.subjAbbr + " " + course.code + " &mdash; " + course.title);
@@ -45,7 +44,7 @@
 				
 				$("#description").html(course.description);
 			}
-		});
+		);
 	});
 </script>
 
