@@ -3,7 +3,7 @@ $(document).ready(function() {
 		cache: false
 	});
 
-	$.ajax({
+	/*$.ajax({
 		type: "POST",
 		url: "api/login/validate.php",
 		data: "token=" + localStorage.login.token;
@@ -15,7 +15,9 @@ $(document).ready(function() {
 				$("form#login").html("<a href=\"#\" id=\"start\">Login</a>");
 			}
 		}
-	});
+	});*/
+
+	localStorage.login = null;
 
 	$("#" + tab).addClass("active");
 
