@@ -5,7 +5,7 @@
 	mysql_select_db("classer_tcnj", $mySQLConnection);
 
 	mysql_query (
-		"update users set token = '', loginTime = '' where token = '" . $clientToken . "'"
+		"update users set token = null, loginTime = '' where token = '" . $clientToken . "'"
 	);
 	
 	mysql_close($mySQLConnection);

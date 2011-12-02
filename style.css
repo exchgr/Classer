@@ -157,7 +157,7 @@ form input[type=submit]{
 }
 
 form input[type=submit]:hover{
-	background-color: #FF4D36;
+	background-color: #FF4D36 !important;
 }
 
 nav form#searchbar input[type=submit] {
