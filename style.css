@@ -141,6 +141,10 @@ nav form#searchbar input[type=text], header form#login input[type=text], header 
 	vertical-align: text-top;
 }
 
+form input[type=submit]{
+	background-color: #3584FF;
+}
+
 nav form#searchbar input[type=submit], header form#login input[type=submit] {
 	width: 24px;
 	height: 24px;
@@ -149,11 +153,7 @@ nav form#searchbar input[type=submit], header form#login input[type=submit] {
 	border: 0px;
 	border-radius: 100px;
 	vertical-align: text-top;
-	background-color: #5C9AFF !important;
-}
-
-form input[type=submit]{
-	background-color: #3584FF;
+	background-color: #5C9AFF;
 }
 
 form input[type=submit]:hover{
