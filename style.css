@@ -9,10 +9,10 @@ body {
 	font-size: small;
 }
 
-div.right {
+/*div.right {
 	position: relative;
 	float: right;
-}
+}*/
 
 a {
 	color: #3584FF;
@@ -49,6 +49,7 @@ p {
 }
 
 .wrapper {
+	position: relative;
 	width: 900px;
 	margin: 0px auto;
 }
@@ -117,7 +118,6 @@ header form#login {
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
-	text-align: right;
 }
 
 header form#login a {
