@@ -8,7 +8,7 @@
 		return $array[0];
 	}
 
-	$dbToken value (
+	$dbToken = value (
 		mysql_fetch_array(
 			mysql_query(
 				"select token from users where token = '" . $clientToken . "'"
