@@ -149,6 +149,7 @@ nav form#searchbar input[type=submit], header form#login input[type=submit] {
 	border: 0px;
 	border-radius: 100px;
 	vertical-align: text-top;
+	background-color: #5C9AFF !important;
 }
 
 form input[type=submit]{
