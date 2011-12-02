@@ -49,7 +49,9 @@ $(document).ready(function() {
 								var data = $.parseJSON(json);
 								localStorage.login.email = $("input#email").val();
 								localStorage.login.token = data.token;
-								alert("login: " + localStorage.login.token + " " + data.token);
+								alert("login: " + localStorage.login.token + " " + data.token + " " + 
+									localStorage.login.email
+								);
 								window.location.reload();
 							}
 						})
