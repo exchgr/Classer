@@ -16,7 +16,7 @@ $(document).ready(function() {
 		success: function(json) {
 			var token = JSON.parse(json);
 			if (token === login.token) {
-				$("form#login").html(login.email + " &ndash;<a href=\"#\" id=\"logout\">Log Out</a>");
+				$("form#login").html(login.email + " &ndash; <a href=\"#\" id=\"logout\">Log Out</a>");
 				$("form#login #logout").click(function() {
 					$.ajax({
 						type: "POST",
