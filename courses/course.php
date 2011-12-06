@@ -58,7 +58,7 @@
 				token: login.token
 			},
 			function(json) {
-				course.star = ((json.star.subjAbbr + " " + json.star.code) == c);
+				course.star = ((json.subjAbbr + " " + json.code) == c);
 				if (course.star) {
 					$("#star").toggleClass("starred");
 				}
