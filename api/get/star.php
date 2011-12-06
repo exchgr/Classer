@@ -11,7 +11,7 @@
 
 	$userQuery = mysql_query("select email from users where token = '" . $token . "'");
 	$email = value(
-		mysql_fetch_assoc($userQuery;)
+		mysql_fetch_array($userQuery, NUM)
 	);
 	echo mysql_error($mySQLConnection);
 
