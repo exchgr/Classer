@@ -20,7 +20,7 @@
 		mysql_query("select subjAbbr, code from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'")
 	);
 
-	echo $star["subjAbbr"];
+	echo $star["subjAbbr"] . " " . $c[0];
 
 	/*if ($star["subjAbbr"] == $c[0] && $star["code"] == $c[1]) {
 		mysql_query("delete from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'");
