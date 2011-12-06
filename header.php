@@ -101,24 +101,6 @@
 						$(this).addClass("grey");
 					}
 				});
-
-				$("#star").click(function() {
-					$.getJSON(
-						"/api/set/star.php",
-						{
-							c: c,
-							token: login.token
-						},
-						function(json) {
-							course.star = ((json.subjAbbr + " " + json.code) == c);
-							if (course.star) {
-								$("#star").addClass("starred");
-							} else {
-								$("#star").removeClass("starred");
-							}
-						}
-					)
-				});
 			});
 		</script>
 	</head>
