@@ -5,9 +5,15 @@
 	$mySQLConnection = mysql_connect("localhost", "classer", "cl4ssy");
 	mysql_select_db("classer_tcnj", $mySQLConnection);
 
+	function value($array) {
+		return $array[0];
+	}
+
 	$userQuery = "select email from users where token = '" . $token . "'";
-	$email = mysql_fetch_assoc(
-		mysql_query($userQuery);
+	$email = value(
+		mysql_fetch_assoc(
+			mysql_query($userQuery);
+		)
 	);
 
 	$starQuery = "select subjAbbr, code from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'";
