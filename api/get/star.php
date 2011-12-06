@@ -1,4 +1,5 @@
 <?
+	error_reporting(-1);
 	$c = explode($_GET["c"]);
 	$token = $_GET["token"];
 
