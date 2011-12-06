@@ -21,5 +21,5 @@
 
 	mysql_close($mySQLConnection);
 
-	echo json_encode($star == $c);
+	echo json_encode($star);
 ?>
