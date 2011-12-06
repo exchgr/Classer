@@ -9,11 +9,9 @@
 		return $array[0];
 	}
 
-	$userQuery = "select email from users where token = '" . $token . "'";
+	$userQuery = mysql_query("select email from users where token = '" . $token . "'");
 	$email = value(
-		mysql_fetch_assoc(
-			mysql_query($userQuery);
-		)
+		mysql_fetch_assoc($userQuery;)
 	);
 
 	echo $c[0] . " " . $c[1] . " " . $token . " " . $userQuery . " " . $email;
