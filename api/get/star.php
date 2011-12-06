@@ -12,11 +12,9 @@
 	$email = value(
 		mysql_fetch_array(
 			mysql_query("select email from users where token = '" . $token . "'"),
-			NUM
+			MYSQL_NUM
 		)
 	);
-
-	echo "select email from users where token = '" . $token . "'";
 
 	echo $email;
 
