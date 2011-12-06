@@ -3,13 +3,7 @@
 ?>
 <script type="text/javascript" language="javascript">
 	var tab = "courses";
-	var c = "<? echo $_GET["c"]; ?>";
 	var course;
-	var login = JSON.parse(localStorage.login);
-	if (!login) {
-		login = {"token": "", "email": ""};
-		localStorage.login = JSON.stringify(login);
-	}
 
 	$(document).ready(function() {
 		$.getJSON(
