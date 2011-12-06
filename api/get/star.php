@@ -13,6 +13,7 @@
 	$email = value(
 		mysql_fetch_assoc($userQuery;)
 	);
+	echo mysql_error($mySQLConnection);
 
 	echo $c[0] . " " . $c[1] . " " . $token . " " . $userQuery . " " . $email;
 
