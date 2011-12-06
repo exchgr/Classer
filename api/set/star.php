@@ -22,11 +22,11 @@
 
 	if ($star["subjAbbr"] == $c[0] && $star["code"] == $c[1]) {
 		mysql_query("delete from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'");
+		echo json_encode(false);
 	} else {
 		mysql_query("insert into stars (email, subjAbbr, code) values ('" . $email . "', '" . $c[0] . "', '" . $c[1] . "')");
+		echo json_encode(array("subjAbbr" => $c[0], "code" => $c[1]));
 	}
 
 	mysql_close($mySQLConnection);
-
-	echo json_encode($star);
 ?>
