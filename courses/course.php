@@ -54,7 +54,7 @@
 			function(json) {
 				course.star = ((json.subjAbbr + " " + json.code) == c);
 				if (course.star) {
-					$("#star").toggleClass("starred");
+					$("#star").addClass("starred");
 				}
 			}
 		);

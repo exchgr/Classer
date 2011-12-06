@@ -110,7 +110,12 @@
 							token: login.token
 						},
 						function(json) {
-							$(this).toggleClass("starred");
+							course.star = ((json.subjAbbr + " " + json.code) == c);
+							if (course.star) {
+								$("#star").addClass("starred");
+							} else {
+								$("#star").removeClass("starred");
+							}
 						}
 					)
 				});
