@@ -21,7 +21,7 @@
 	);
 
 	if ($star["subjAbbr"] == $c[0] && $star["code"] == $c[1]) {
-		echo "true"; //mysql_query("delete from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'");
+		mysql_query("delete from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'");
 	} else {
 		echo "false"; // mysql_query("insert into stars (email, subjAbbr, code) values ('" . $email . "', '" . $star["subjAbbr"] . "', '" . $star["code"] . "')");
 	}
