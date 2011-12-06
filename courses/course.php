@@ -10,7 +10,7 @@
 		login = {"token": "", "email": ""};
 		localStorage.login = JSON.stringify(login);
 	}
-	
+
 	$(document).ready(function() {
 		$.getJSON(
 			"/api/get/course.php",
@@ -50,7 +50,8 @@
 				
 				$("#description").html(course.description);
 			}
-		).getJSON(
+		);
+		$.getJSON(
 			"/api/get/star.php",
 			{
 				c: c,
