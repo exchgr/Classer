@@ -48,7 +48,7 @@
 			"/api/get/star.php",
 			{
 				c: c,
-				token: login.token;
+				token: login.token
 			},
 			function(json) {
 				course.star = ((json.star.subjAbbr + " " + json.star.code) == c);
