@@ -16,13 +16,11 @@
 		)
 	);
 
-	echo $email;
-
 	$star = mysql_fetch_assoc(
 		mysql_query("select subjAbbr, code from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'")
 	);
 
 	mysql_close($mySQLConnection);
 
-	echo json_encode($star);
+	echo json_encode($star === $c);
 ?>
