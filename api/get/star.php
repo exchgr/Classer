@@ -13,14 +13,13 @@
 	$email = value(
 		mysql_fetch_array($userQuery, NUM)
 	);
-	echo mysql_error($mySQLConnection);
 
-	/*$starQuery = "select subjAbbr, code from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'";
+	$starQuery = "select subjAbbr, code from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'";
 	$star = mysql_fetch_assoc(
-		mysql_query($starQuery);
+		mysql_query($starQuery)
 	);
 
 	mysql_close($mySQLConnection);
 
-	echo json_encode($star == $c);*/
+	echo json_encode($star == $c);
 ?>
