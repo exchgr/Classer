@@ -1,5 +1,5 @@
 <?
-	$c = explode($_GET["c"]);
+	$c = explode(" ", $_GET["c"]);
 	$token = $_GET["token"];
 
 	$mySQLConnection = mysql_connect("localhost", "classer", "cl4ssy");
@@ -10,8 +10,7 @@
 	}
 
 	$userQuery = "select email from users where token = '" . $token . "'";
-	echo $c[0] . " " . $c[1] . " " . $token . " " . $userQuery;
-	/*$email = value(
+	$email = value(
 		mysql_fetch_assoc(
 			mysql_query($userQuery);
 		)
@@ -24,5 +23,5 @@
 
 	mysql_close($mySQLConnection);
 
-	echo json_encode($star == $c);*/
+	echo json_encode($star == $c);
 ?>
