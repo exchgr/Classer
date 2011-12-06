@@ -10,14 +10,15 @@
 	}
 
 	$userQuery = "select email from users where token = '" . $token . "'";
-	echo $c[0] . " " . $c[1] . " " . $token . " " . $userQuery;
-	/*$email = value(
+	$email = value(
 		mysql_fetch_assoc(
 			mysql_query($userQuery);
 		)
 	);
 
-	$starQuery = "select subjAbbr, code from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'";
+	echo $c[0] . " " . $c[1] . " " . $token . " " . $userQuery . " " . $email;
+
+	/*$starQuery = "select subjAbbr, code from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'";
 	$star = mysql_fetch_assoc(
 		mysql_query($starQuery);
 	);
