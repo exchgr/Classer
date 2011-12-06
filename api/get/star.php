@@ -1,6 +1,6 @@
 <?
 	echo "still works";
-	$c = explode($_GET["c"]);
+	/*$c = explode($_GET["c"]);
 	$token = $_GET["token"];
 
 	$mySQLConnection = mysql_connect("localhost", "classer", "cl4ssy");
@@ -16,5 +16,5 @@
 		mysql_query($starQuery);
 	);
 
-	echo json_encode($star == $c);
+	echo json_encode($star == $c);*/
 ?>
