@@ -15,8 +15,6 @@
 	);
 	echo mysql_error($mySQLConnection);
 
-	echo $c[0] . " " . $c[1] . " " . $token . " " . $userQuery . " " . $email;
-
 	/*$starQuery = "select subjAbbr, code from stars where email = '" . $email . "' and subjAbbr = '" . $c[0] . "' and code = '" . $c[1] . "'";
 	$star = mysql_fetch_assoc(
 		mysql_query($starQuery);
