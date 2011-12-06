@@ -10,7 +10,8 @@
 	}
 
 	$userQuery = "select email from users where token = '" . $token . "'";
-	$email = value(
+	echo $c[0] . " " . $c[1] . " " . $token . " " . $userQuery;
+	/*$email = value(
 		mysql_fetch_assoc(
 			mysql_query($userQuery);
 		)
@@ -23,5 +24,5 @@
 
 	mysql_close($mySQLConnection);
 
-	echo json_encode($star == $c);
+	echo json_encode($star == $c);*/
 ?>
