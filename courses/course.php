@@ -44,13 +44,25 @@
 				
 				$("#description").html(course.description);
 			}
+		).getJSON(
+			"/api/get/star.php",
+			{
+				c: c,
+				token: login.token;
+			},
+			function(json) {
+				course.star = ((json.star.subjAbbr + " " + json.star.code) == c);
+				if (course.star) {
+					$("#star").toggleClass("starred");
+				}
+			}
 		);
 	});
 </script>
 
 <div class="wrapper">
 	<div id="main">
-		<h2><div class="star"></div> <span id="title"></span></h2>
+		<h2><div id="star"></div> <span id="title"></span></h2>
 		<div class="course">
 			<section class="info">
 				<h2>Information</h2>

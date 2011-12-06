@@ -88,7 +88,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".star").click(function() {
+	$("#star").click(function() {
 		$(this).toggleClass("starred");
 	});
 });

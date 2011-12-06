@@ -170,7 +170,7 @@ header form#login input[type=submit] {
 
 /* Courses */
 
-.star {
+#star {
 	display: inline-block;
 	background: url("/images/starsprites.png") 0px 0px;
 	background-repeat: none;
@@ -178,15 +178,15 @@ header form#login input[type=submit] {
 	width: 16px;
 }
 
-.star:hover {
+#star:hover {
 	background: url("/images/starsprites.png") -16px 0px;
 }
 
-.star.starred {
+#star.starred {
 	background: url("/images/starsprites.png") 0px -16px;
 }
 
-.star.starred:hover {
+#star.starred:hover {
 	background: url("/images/starsprites.png") -16px -16px;
 }
 
