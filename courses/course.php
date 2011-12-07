@@ -42,7 +42,7 @@
 						type: "GET",
 						url: "/api/get/taken.php",
 						data:
-							"c=" + course.prerequisites +
+							"c=" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] +
 							"&token=" + login.token,
 						async: false,
 						success: function(data) {
