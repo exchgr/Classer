@@ -33,7 +33,6 @@
 							token: login.token
 						},
 						function(json) {
-							alert(json);
 							if (json) {
 								alert(json);
 								prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10004;</span>";
