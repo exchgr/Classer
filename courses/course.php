@@ -35,10 +35,23 @@
 						function(json) {
 							if (json) {
 								prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10004;</span>";
-								alert(prerequisites);
 							}
 						}
 					);
+					$.ajax({
+						type: "GET",
+						url: "/api/get/taken.php",
+						data:
+							"c=" + course.prerequisites +
+							"&token=" + login.token,
+						async: false,
+						success: function(data) {
+							json = JSON.parse(data);
+							if (json) {
+								prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10004;</span>";
+							}
+						}
+					});
 					prerequisites += "</li>";
 				}
 				$("#prerequisites").html(prerequisites);
