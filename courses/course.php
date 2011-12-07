@@ -29,7 +29,7 @@
 					$.getJSON(
 						"/api/get/taken.php",
 						{
-							c: c,
+							c: course.prerequisites[i][0] + "+" + course.prerequisites[i][1]
 							token: login.token
 						},
 						function(json) {
