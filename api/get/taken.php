@@ -22,5 +22,5 @@
 
 	mysql_close($mySQLConnection);
 
-	echo json_encode($taken);
+	echo json_encode((boolean) $taken);
 ?>

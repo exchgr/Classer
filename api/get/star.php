@@ -22,5 +22,5 @@
 
 	mysql_close($mySQLConnection);
 
-	echo json_encode($star["subjAbbr"] == $c[0] && $star["code"] == $c[1]);
+	echo json_encode((boolean) $star);
 ?>
