@@ -201,11 +201,15 @@ header form#login input[type=submit] {
 	background: #83FF36;
 	padding: 2px 5px;
 	border-radius: 3px;
+	font-weight: bold;
+}
+
+h2 #title .taken {
+	font-size: small;
 }
 
 #prerequisites .taken {
 	font-size: xx-small;
-	font-weight: bold;
 }
 
 .info {
