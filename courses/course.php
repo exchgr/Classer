@@ -14,6 +14,20 @@
 				course = json;
 				$("#title").html(course.subjAbbr + " " + course.code + " &mdash; " + course.title);
 				$("head title").append(" | " + course.subjAbbr + " " + course.code + " &mdash; " + course.title);
+				$.ajax({
+					type: "GET",
+					url: "/api/get/taken.php",
+					data:
+						"c=" + course.subjAbbr + " " + course.code +
+						"&token=" + login.token,
+					async: false,
+					success: function(data) {
+						var json = JSON.parse(data);
+						if (json) {
+							$("#title").append(" <span class=\"taken\" title=\"You've taken this course.\">&#10003;</span>");
+						}
+					}
+				});
 				$("#credits").html(course.credits);
 				$("#type").html(course.type);
 				$("#gradingType").html(course.gradingType);
