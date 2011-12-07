@@ -25,7 +25,20 @@
 					if (i === (course.prerequisites.length - 1)) {
 						prerequisites += " class=\"last\"";
 					}
-					prerequisites += "><a href=\"/courses/course.php?c=" + course.prerequisites[i][0] + "+" + course.prerequisites[i][1] + "\">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] + "</a></li>";
+					prerequisites += "><a href=\"/courses/course.php?c=" + course.prerequisites[i][0] + "+" + course.prerequisites[i][1] + "\">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] + "</a>"
+					$.getJSON(
+						"/api/get/taken.php",
+						{
+							c: c,
+							token: login.token
+						},
+						function(json) {
+							if (json) {
+								prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10004;</span>";
+							}
+						}
+					);
+					prerequisites += "</li>";
 				}
 				$("#prerequisites").html(prerequisites);
 				
