@@ -43,7 +43,7 @@
 				$("#satisfies").html(satisfies);
 				
 				$("#description").html(course.description);
-				
+
 				$.getJSON(
 					"/api/get/star.php",
 					{
@@ -51,8 +51,7 @@
 						token: login.token
 					},
 					function(json) {
-						course.star = ((json.subjAbbr + " " + json.code) == c);
-						if (course.star) {
+						if (json) {
 							$("#star").addClass("starred");
 						}
 					}
