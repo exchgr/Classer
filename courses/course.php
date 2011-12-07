@@ -26,18 +26,6 @@
 						prerequisites += " class=\"last\"";
 					}
 					prerequisites += "><a href=\"/courses/course.php?c=" + course.prerequisites[i][0] + "+" + course.prerequisites[i][1] + "\">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] + "</a>"
-					/*$.getJSON(
-						"/api/get/taken.php",
-						{
-							c: course.prerequisites[i][0] + " " + course.prerequisites[i][1],
-							token: login.token
-						},
-						function(json) {
-							if (json) {
-								prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10004;</span>";
-							}
-						}
-					);*/
 					$.ajax({
 						type: "GET",
 						url: "/api/get/taken.php",
@@ -48,7 +36,7 @@
 						success: function(data) {
 							var json = JSON.parse(data);
 							if (json) {
-								prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10004;</span>";
+								prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10003;</span>";
 							}
 						}
 					});
