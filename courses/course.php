@@ -133,7 +133,7 @@
 					</tr>
 					<tr>
 						<th>Prerequisites</th>
-						<td><ul id="prerequisites"></ul><!--IMPLEMENT TAKEN COURSES (here and in the title)--></td>
+						<td><ul id="prerequisites"></ul></td>
 					</tr>
 					<tr>
 						<th>School</th>
