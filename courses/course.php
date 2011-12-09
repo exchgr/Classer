@@ -14,20 +14,22 @@
 				course = json;
 				$("#title").html(course.subjAbbr + " " + course.code + " &mdash; " + course.title);
 				$("head title").append(" | " + course.subjAbbr + " " + course.code + " &mdash; " + course.title);
-				$.ajax({
-					type: "GET",
-					url: "/api/get/taken.php",
-					data:
-						"c=" + course.subjAbbr + " " + course.code +
-						"&token=" + login.token,
-					async: false,
-					success: function(data) {
-						var json = JSON.parse(data);
-						if (json) {
-							$("#title").append(" <span class=\"taken\" title=\"You've taken this course.\">&#10003;</span>");
+				if (loggedIn) {
+					$.ajax({
+						type: "GET",
+						url: "/api/get/taken.php",
+						data:
+							"c=" + course.subjAbbr + " " + course.code +
+							"&token=" + login.token,
+						async: false,
+						success: function(data) {
+							var json = JSON.parse(data);
+							if (json) {
+								$("#title").append(" <span class=\"taken\" title=\"You've taken this course.\">&#10003;</span>");
+							}
 						}
-					}
-				});
+					});
+				}
 				$("#credits").html(course.credits);
 				$("#type").html(course.type);
 				$("#gradingType").html(course.gradingType);
@@ -39,21 +41,23 @@
 					if (i === (course.prerequisites.length - 1)) {
 						prerequisites += " class=\"last\"";
 					}
-					prerequisites += "><a href=\"/courses/course.php?c=" + course.prerequisites[i][0] + "+" + course.prerequisites[i][1] + "\">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] + "</a>"
-					$.ajax({
-						type: "GET",
-						url: "/api/get/taken.php",
-						data:
-							"c=" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] +
-							"&token=" + login.token,
-						async: false,
-						success: function(data) {
-							var json = JSON.parse(data);
-							if (json) {
-								prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10003;</span>";
+					prerequisites += "><a href=\"/courses/course.php?c=" + course.prerequisites[i][0] + "+" + course.prerequisites[i][1] + "\">" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] + "</a>";
+					if (loggedIn) {
+						$.ajax({
+							type: "GET",
+							url: "/api/get/taken.php",
+							data:
+								"c=" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] +
+								"&token=" + login.token,
+							async: false,
+							success: function(data) {
+								var json = JSON.parse(data);
+								if (json) {
+									prerequisites += " <span class=\"taken\" title=\"You've taken this course.\">&#10003;</span>";
+								}
 							}
-						}
-					});
+						});
+					}
 					prerequisites += "</li>";
 				}
 				$("#prerequisites").html(prerequisites);
@@ -73,18 +77,20 @@
 				
 				$("#description").html(course.description);
 
-				$.getJSON(
-					"/api/get/star.php",
-					{
-						c: c,
-						token: login.token
-					},
-					function(json) {
-						if (json) {
-							$("#star").addClass("starred");
+				if (loggedIn) {
+					$.getJSON(
+						"/api/get/star.php",
+						{
+							c: c,
+							token: login.token
+						},
+						function(json) {
+							if (json) {
+								$("#star").addClass("starred");
+							}
 						}
-					}
-				);
+					);
+				}
 			}
 		);
 
@@ -110,7 +116,7 @@
 
 <div class="wrapper">
 	<div id="main">
-		<h2><div id="star"></div> <span id="title"></span></h2>
+		<h2><div id="star" class="userSpecific"></div> <span id="title"></span></h2>
 		<div class="course">
 			<section class="info">
 				<h2>Information</h2>
@@ -157,19 +163,19 @@
 				<h2>Sections</h2>
 				<table>
 					<thead>
-						<th><th>Section</th><th>Time</th><th>Room</th><th>Instructor</th><th>Semester</th><th>Seats Remaining</th>
+						<th>Section</th><th>Time</th><th>Room</th><th>Instructor</th><th>Semester</th><th>Seats Remaining</th>
 					</thead><!--/.header-->
 					<tr class="section open">
-						<td><div class="star"></div></td><td>IMM 270-01</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>5 <span class="status open">open</span></td>
+						<td>IMM 270-01</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>5 <span class="status open">open</span></td>
 					</tr><!--/.section-->
 					<tr class="section closed">
-						<td><div class="star"></div></td><td>IMM 270-02</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>0 <span class="status closed">closed</span></td>
+						<td>IMM 270-02</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>0 <span class="status closed">closed</span></td>
 					</tr><!--/.section-->
 					<tr class="section open">
-						<td><div class="star"></div></td><td>IMM 270-03</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>1 <span class="status open">open</span></td>
+						<td>IMM 270-03</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>1 <span class="status open">open</span></td>
 					</tr><!--/.section-->
 					<tr class="section open">
-						<td><div class="star"></div></td><td>IMM 270-04</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>6 <span class="status open">open</span></td>
+						<td>IMM 270-04</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>6 <span class="status open">open</span></td>
 					</tr><!--/.section-->
 				</table>
 			</section><!--/.sections-->

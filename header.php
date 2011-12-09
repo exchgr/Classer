@@ -12,6 +12,7 @@
 		<script type="text/javascript" language="javascript" src="/include/jquery-1.7.min.js" ></script>
 		<script type="text/javascript" language="javascript">
 			var c = "<? echo $_GET["c"]; ?>";
+			var loggedIn;
 			var login = JSON.parse(localStorage.login);
 			if (!login) {
 				login = {"token": "", "email": ""};
@@ -30,6 +31,7 @@
 					success: function(json) {
 						var token = JSON.parse(json);
 						if (token === login.token) {
+							loggedIn = true;
 							$("form#login").html(login.email + " &ndash; <a href=\"#\" id=\"logout\">Log Out</a>");
 							$("form#login #logout").click(function() {
 								$.ajax({
@@ -42,6 +44,8 @@
 								});
 							});
 						} else {
+							loggedIn = false;
+							$(".userSpecific").hide();
 							login = {"token": "", "email": ""};
 							localStorage.login = JSON.stringify(login);
 							$("form#login").html("<a href=\"#\" id=\"start\">Log In</a>");
@@ -124,7 +128,7 @@
 				<ul>
 					<li id="courses"><a href="/courses/">Courses</a></li>
 					<li id="tuition"><a href="#">Tuition</a></li>
-					<li id="yourInfo"><a href="#">Your Info</a></li>
+					<li id="you" class="userSpecific"><a href="#">You</a></li>
 				</ul>
 			</div><!--/.wrapper-->
 		</nav>	
