@@ -13,7 +13,10 @@
 		<script type="text/javascript" language="javascript">
 			var c = "<? echo $_GET["c"]; ?>";
 			var loggedIn;
-			var login = JSON.parse(localStorage.login);
+			var login = JSON.parse(sessionStorage.login);
+			if (!login) {
+				login = JSON.parse(localStorage.login);
+			}
 			if (!login) {
 				login = {"token": "", "email": ""};
 				localStorage.login = JSON.stringify(login);
@@ -53,7 +56,8 @@
 								$("form#login").html(
 									"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\">" + 
 									"<br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> " + 
-									"<input type=\"submit\" value=\"\">"
+									"<input type=\"submit\" value=\"\">" +
+									"<br /><input type=\"checkbox\" name=\"remember\" id=\"remember\">"
 								);
 								$(".grey").focus(function() {
 									$(this).attr("value", "");
@@ -80,7 +84,11 @@
 										success: function(json) {
 											var data = JSON.parse(json);
 											login = {"email": $("input#email").val(), "token": data.token};
-											localStorage.login = JSON.stringify(login);
+											if ($("input#remember").val()) {
+												localStorage.login = JSON.stringify(login);
+											} else {
+												sessionStorage.login = JSON.stringify(login);
+											}
 											window.location.reload();
 										}
 									});
