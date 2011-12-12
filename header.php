@@ -84,8 +84,8 @@
 										success: function(json) {
 											var data = JSON.parse(json);
 											login = {"email": $("input#email").val(), "token": data.token};
-											alert($("input#remember").val());
-											if ($("input#remember").val()) {
+											alert($("input#remember").is(":checked"));
+											if ($("input#remember").is(":checked")) {
 												localStorage.login = JSON.stringify(login);
 											} else {
 												sessionStorage.login = JSON.stringify(login);
