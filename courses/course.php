@@ -85,8 +85,8 @@
 						if (j != (course.sections[i].weekdays.length - 1)) {
 							sections += ",";
 						}
-						sections += "<br />";
 					}
+					sections += "<br />";
 					sections += course.sections[i].beginTime + " - " + course.sections[i].endTime + "</td><td>" + course.sections[i].room + "</td><td><a href=\"/faculty/instructor.php?i=" + course.sections[i].instructor + "\">" + course.sections[i].instructor + "</a></td><td>" + course.sections[i].semester + " " + course.sections[i].semesterYear + "</td><td>" + course.sections[i].seatsRemaining + " <span class=\"status";
 					if (course.sections[i].seatsRemaining > 0) {
 						sections += " open\">open";
