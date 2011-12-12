@@ -75,7 +75,27 @@
 				}
 				$("#satisfies").html(satisfies);
 				
-				$("#description").html(course.description);
+				$("#description div").html(course.description);
+
+				var sections = "";
+				for (i = 0; i < course.sections.length; i++) {
+					sections += "<tr class=\"section\"><td>" + course.subjAbbr + " " + course.code + "-" + course.sections[i].section + "</td><td>";
+					for (j = 0; j < course.sections[i].weekdays.length; j++) {
+						sections += course.sections[i].weekdays[j];
+						if (j != (course.sections[i].weekdays.length - 1)) {
+							sections += ",";
+						}
+						sections += "<br />";
+					}
+					sections += course.sections[i].beginTime + " - " course.sections[i].endTime + "</td><td>" + course.sections[i].room + "</td><td><a href=\"/faculty/instructor.php?i=" + course.sections[i].instructor + "\">" + course.sections[i].instructor + "</a></td><td>" + course.sections[i].semester + " " + course.sections[i].semesterYear + "</td><td>" + course.sections[i].seatsRemaining + "span class=\"status";
+					if (course.sections[i].seatsRemaining > 0) {
+						sections += " open\">open";
+					} else {
+						sections += " closed\">closed";
+					}
+					sections += "</span></td></tr>";
+				}
+				$("#sections table").append(sections);
 
 				if (loggedIn) {
 					$.getJSON(
@@ -118,7 +138,7 @@
 	<div id="main">
 		<h2><div id="star" class="userSpecific"></div> <span id="title"></span></h2>
 		<div class="course">
-			<section class="info">
+			<section id="info">
 				<h2>Information</h2>
 				<table>
 					<tr>
@@ -154,31 +174,19 @@
 						<td><ul id="satisfies"></ul></td>
 					</tr>
 				</table>
-			</section><!--/.info-->
-			<section class="description">
+			</section><!--/#info-->
+			<section id="description">
 				<h2>Description</h2>
-				<div id="description"></div>
-			</section><!--/.description-->
-			<section class="sections">
+				<div></div>
+			</section><!--/#description-->
+			<section id="sections">
 				<h2>Sections</h2>
 				<table>
 					<thead>
 						<th>Section</th><th>Time</th><th>Room</th><th>Instructor</th><th>Semester</th><th>Seats Remaining</th>
-					</thead><!--/.header-->
-					<tr class="section open">
-						<td>IMM 270-01</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>5 <span class="status open">open</span></td>
-					</tr><!--/.section-->
-					<tr class="section closed">
-						<td>IMM 270-02</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>0 <span class="status closed">closed</span></td>
-					</tr><!--/.section-->
-					<tr class="section open">
-						<td>IMM 270-03</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>1 <span class="status open">open</span></td>
-					</tr><!--/.section-->
-					<tr class="section open">
-						<td>IMM 270-04</td><td>Thursday<br />9AM-11:50AM</td><td>AIMM 202</td><td><a href="/faculty/instructor.php?i=Christopher+Ault">Christopher Ault</a></td><td>Spring 2012</td><td>6 <span class="status open">open</span></td>
-					</tr><!--/.section-->
+					</thead>
 				</table>
-			</section><!--/.sections-->
+			</section><!--/#sections-->
 		</div><!--/.course-->
 	</div><!--/#main-->
 </div><!--/.wrapper-->

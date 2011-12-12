@@ -22,6 +22,15 @@
 		$course["prerequisites"][] = $prerequisite;
 	}
 
+	$sectionsQuery = mysql_query("select * from sections where subjAbbr = (select subjAbbr from courses where subjAbbr = '" . $course["subjAbbr"] . "' and code = '" . $course["code"] . "') and code = (select code from courses where subjAbbr = '" . $course["subjAbbr"] . "' and code = '" . $course["code"] . "')");
+	$course["sections"] = array();
+	for ($i = 0; $section = mysql_fetch_assoc($sectionsQuery); $i++) {
+		$course["sections"][] = $section;
+		$course["sections"][i]["weekdays"] = explode("," $section["weekdays"]);
+		$course["sections"][i]["beginTime"] = date("g:i A", strtotime($section["beginTime"]));
+		$course["sections"][i]["endTime"] = date("g:i A", strtotime($section["endTime"]));
+	}
+
 	mysql_close($mySQLConnection);
 
 	echo json_encode($course);

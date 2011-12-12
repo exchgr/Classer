@@ -206,23 +206,23 @@ h2 #title .taken {
 	font-size: xx-small;
 }
 
-.info {
+#info {
 	float: left;
 	width: 270px;
 	margin: 0px 10px 20px 0px;
 }
 
-.info table {
+#info table {
 	margin: 0px;
 	border-collapse: collapse;
 }
 
-.info td, .info th {
+#info td, #info th {
 	padding: 5px 10px;
 	border: 1px solid #cccccc;
 }
 
-.info th {
+#info th {
 	background: #cccccc;
 	text-align: right;
 	font-weight: normal;
@@ -242,28 +242,28 @@ ul#satisfies li.last, ul#prerequisites li.last {
 	margin: 0px;
 }
 
-.description {
+#description {
 	float: right;
 	width: 570px;
 	margin-left: 10px;
 }
 
-.sections {
+#sections {
 	clear: both;
 }
 
-.sections table {
+#sections table {
 	width: 100%;
 	border: 1px solid #cccccc;
 	border-collapse: collapse;
 }
 
-.sections td {
+#sections td {
 	padding: 10px 20px;
 	border-top: 1px solid #cccccc;
 }
 
-.sections th {
+#sections th {
 	padding: 5px 20px;
 	background: #cccccc;
 	text-align: left;
