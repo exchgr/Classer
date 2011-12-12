@@ -20,7 +20,7 @@
 				sessionStorage.login = JSON.stringify({"token": "", "email": ""});
 			}
 			if (!localStorage.login || localStorage.login == "undefined") {
-				alert(typeof localStorage.login);)
+				alert(typeof localStorage.login);
 				localStorage.login = JSON.stringify({"token": "", "email": ""});
 			}
 
