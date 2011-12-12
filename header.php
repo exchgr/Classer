@@ -84,6 +84,7 @@
 										success: function(json) {
 											var data = JSON.parse(json);
 											login = {"email": $("input#email").val(), "token": data.token};
+											alert($("input#remember").val());
 											if ($("input#remember").val()) {
 												localStorage.login = JSON.stringify(login);
 											} else {
