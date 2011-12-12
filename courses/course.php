@@ -83,7 +83,7 @@
 					for (j = 0; j < course.sections[i].weekdays.length; j++) {
 						sections += course.sections[i].weekdays[j];
 						if (j != (course.sections[i].weekdays.length - 1)) {
-							sections += ",";
+							sections += ", ";
 						}
 					}
 					sections += "<br />";
