@@ -27,8 +27,8 @@
 	for ($i = 0; $section = mysql_fetch_assoc($sectionsQuery); $i++) {
 		$course["sections"][] = $section;
 		//$course["sections"][i]["weekdays"] = explode("," $section["weekdays"]);
-		//$course["sections"][i]["beginTime"] = date("g:i A", strtotime($section["beginTime"]));
-		//$course["sections"][i]["endTime"] = date("g:i A", strtotime($section["endTime"]));
+		$course["sections"][i]["beginTime"] = date("g:i A", strtotime($section["beginTime"]));
+		$course["sections"][i]["endTime"] = date("g:i A", strtotime($section["endTime"]));
 	}
 
 	mysql_close($mySQLConnection);
