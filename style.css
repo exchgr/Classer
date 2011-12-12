@@ -9,12 +9,6 @@ body {
 	font-size: small;
 }
 
-/*div.right {
-	position: relative;
-	float: right;
-} 
-*/
-
 a {
 	color: #3584FF;
 	text-decoration: none;
@@ -125,7 +119,7 @@ nav form#searchbar {
 
 header form#login {
 	position: absolute;
-	bottom: -5px;
+	bottom: -2px;
 	right: 0px;
 }
 

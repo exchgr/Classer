@@ -51,17 +51,20 @@
 							$(".userSpecific").hide();
 							login = {"token": "", "email": ""};
 							localStorage.login = JSON.stringify(login);
+							sessionStorage.login = JSON.stringify(login);
 							$("form#login").html("<a href=\"#\" id=\"start\">Log In</a>");
 							$("form#login #start").click(function() {
 								$("form#login").html(
-									"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\">" + 
-									"<br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\"> " + 
+									"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\" />" + 
+									"<br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\" /> " + 
 									"<input type=\"submit\" value=\"\">" +
-									"<br /><input type=\"checkbox\" name=\"remember\" id=\"remember\">"
+									"<br /><input type=\"checkbox\" name=\"remember\" id=\"remember\" /> Remember me"
 								);
 								$(".grey").focus(function() {
-									$(this).attr("value", "");
-									$(this).removeClass("grey");
+									if ($(this).hasClass("grey")) {
+										$(this).attr("value", "");
+										$(this).removeClass("grey");
+									}
 								});
 								$("form#login #email").blur(function() {
 									if ($(this).attr("value") === "") {
@@ -84,7 +87,6 @@
 										success: function(json) {
 											var data = JSON.parse(json);
 											login = {"email": $("input#email").val(), "token": data.token};
-											alert($("input#remember").is(":checked"));
 											if ($("input#remember").is(":checked")) {
 												localStorage.login = JSON.stringify(login);
 											} else {
