@@ -13,13 +13,20 @@
 		<script type="text/javascript" language="javascript">
 			var c = "<? echo $_GET["c"]; ?>";
 			var loggedIn;
+
+			// This is necessary so that webkit-based browsers don't grind to a halt when trying to JSON.parse("undefined").
+			if (!sessionStorage.login || sessionStorage.login == "undefined") {
+				alert(typeof sessionStorage.login);
+				sessionStorage.login = JSON.stringify({"token": "", "email": ""});
+			}
+			if (!localStorage.login || localStorage).login == "undefined") {
+				alert(typeof localStorage.login);)
+				localStorage.login = JSON.stringify({"token": "", "email": ""});
+			}
+
 			var login = JSON.parse(sessionStorage.login);
 			if (!login) {
 				login = JSON.parse(localStorage.login);
-			}
-			if (!login) {
-				login = {"token": "", "email": ""};
-				localStorage.login = JSON.stringify(login);
 			}
 
 			$(document).ready(function() {
