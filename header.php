@@ -15,17 +15,17 @@
 			var loggedIn;
 
 			// This is necessary so that webkit-based browsers don't grind to a halt when trying to JSON.parse("undefined").
-			if (!sessionStorage.login || sessionStorage.login == "undefined") {
+			if (!sessionStorage.login) {
 				alert(typeof sessionStorage.login);
 				sessionStorage.login = JSON.stringify({"token": "", "email": ""});
 			}
-			if (!localStorage.login || localStorage.login == "undefined") {
+			if (!localStorage.login) {
 				alert(typeof localStorage.login);
 				localStorage.login = JSON.stringify({"token": "", "email": ""});
 			}
 
 			var login = JSON.parse(sessionStorage.login);
-			if (!login) {
+			if (login.token == "") {
 				login = JSON.parse(localStorage.login);
 			}
 
