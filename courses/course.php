@@ -77,7 +77,7 @@
 				
 				$("#description div").html(course.description);
 
-				var sections = "";
+				/*var sections = "";
 				for (i = 0; i < course.sections.length; i++) {
 					sections += "<tr class=\"section\"><td>" + course.subjAbbr + " " + course.code + "-" + course.sections[i].section + "</td><td>";
 					for (j = 0; j < course.sections[i].weekdays.length; j++) {
@@ -95,7 +95,7 @@
 					}
 					sections += "</span></td></tr>";
 				}
-				$("#sections table").append(sections);
+				$("#sections table").append(sections);*/
 
 				if (loggedIn) {
 					$.getJSON(
