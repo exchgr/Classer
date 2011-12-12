@@ -79,7 +79,7 @@
 
 				var sections = "";
 				for (i = 0; i < course.sections.length; i++) {
-					sections += "<tr class=\"section\"><td>" + course.subjAbbr + " " + course.code + "-" + course.sections[i].section + "</td><td>";
+					//sections += "<tr class=\"section\"><td>" + course.subjAbbr + " " + course.code + "-" + course.sections[i].section + "</td><td>";
 					/*for (j = 0; j < course.sections[i].weekdays.length; j++) {
 						sections += course.sections[i].weekdays[j];
 						if (j != (course.sections[i].weekdays.length - 1)) {
