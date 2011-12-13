@@ -146,7 +146,7 @@ form input[type=submit], form input[type=button] {
 	background-color: #5C9AFF;
 }
 
-form input[type=submit]:hover, form a#cancel:hover{
+form input[type=submit]:hover, form input[type=button]:hover {
 	background-color: #FF4D36 !important;
 }
 
