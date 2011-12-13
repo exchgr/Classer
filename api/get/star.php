@@ -1,5 +1,5 @@
 <?
-	require_once("/include/error.php");
+	require_once(realpath($_SERVER["DOCUMENT_ROOT"]) . "/include/error.php");
 
 	$c = explode(" ", $_GET["c"]);
 	$token = $_GET["token"];
