@@ -2,7 +2,7 @@
 	require_once(realpath($_SERVER["DOCUMENT_ROOT"]) . "/include/error.php");
 
 	$c = explode(" ", $_GET["c"]);
-	echo $c;
+	echo $c[0];
 
 	if (!empty($c)) {
 		$mySQLConnection = mysql_connect("localhost", "classer", "cl4ssy");
