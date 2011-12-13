@@ -35,7 +35,8 @@
 			$error->echoHeaderJSON();
 		}
 	} else {
-		
+		$error = new Error("400", "token is undefined.");
+		$error->echoHeaderJSON();
 	}
 
 	mysql_close($mySQLConnection);
