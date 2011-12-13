@@ -36,7 +36,7 @@
 					type: "POST",
 					url: "/api/login/validate.php",
 					data: "token=" + login.token,
-					success: function(json) {
+					success: function loginCheck(json) {
 						var token = JSON.parse(json);
 						if (token === login.token) {
 							loggedIn = true;
@@ -61,6 +61,7 @@
 							$("form#login #start").click(function() {
 								$("form#login").html(
 									"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\" />" + 
+									"<a href=\"#\" id=\"cancel\">x</a>" +
 									"<br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\" /> " + 
 									"<input type=\"submit\" value=\"\">" +
 									"<br /><input type=\"checkbox\" name=\"remember\" id=\"remember\" /> Remember me"
@@ -71,6 +72,9 @@
 										$(this).removeClass("grey");
 									}
 								});
+								$("form#login #cancel").click(function() {
+									loginCheck(json);
+								}
 								$("form#login #email").blur(function() {
 									if ($(this).attr("value") === "") {
 										$(this).attr("value", "E-Mail");
