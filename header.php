@@ -74,7 +74,7 @@
 								});
 								$("form#login #cancel").click(function() {
 									loginCheck(json);
-								}
+								});
 								$("form#login #email").blur(function() {
 									if ($(this).attr("value") === "") {
 										$(this).attr("value", "E-Mail");
