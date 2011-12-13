@@ -137,14 +137,14 @@
 		
 		<nav>
 			<div class="wrapper">
-				<form id="searchbar">
+				<!--form id="searchbar">
 					<input type="text" value="Search" class="grey" id="search" />
 					<input type="submit" value="" />
 				</form><!--/#searchbar-->
 				<ul>
 					<li id="courses"><a href="/courses/">Courses</a></li>
-					<li id="tuition"><a href="#">Tuition</a></li>
-					<li id="you" class="userSpecific"><a href="#">You</a></li>
+					<!--li id="tuition"><a href="#">Tuition</a></li-->
+					<!--li id="you" class="userSpecific"><a href="#">You</a></li-->
 				</ul>
 			</div><!--/.wrapper-->
 		</nav>	
