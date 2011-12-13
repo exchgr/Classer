@@ -134,8 +134,8 @@
 	});
 </script>
 
-<div class="wrapper">
-	<div id="main">
+<div id="main">
+	<div class="wrapper">
 		<h2><div id="star" class="userSpecific"></div> <span id="title"></span></h2>
 		<div class="course">
 			<section id="info">
@@ -188,6 +188,6 @@
 				</table>
 			</section><!--/#sections-->
 		</div><!--/.course-->
-	</div><!--/#main-->
-</div><!--/.wrapper-->
+	</div><!--/.wrapper-->
+</div><!--/#main-->
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/footer.php"); ?>
