@@ -135,7 +135,7 @@ form input[type=text], form input[type=password] {
 	vertical-align: text-top;
 }
 
-form input[type=submit] {
+form input[type=submit], form input[type=button] {
 	width: 24px;
 	height: 24px;
 	margin: 0px;
