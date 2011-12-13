@@ -63,7 +63,7 @@
 		public function __construct($code, $message) {
 			$this->code = $code;
 			$this->message = $message;
-			$this->httpMessage = $this::$codes[$this->$code];
+			$this->httpMessage = Error::$codes[$this->$code];
 		}
 
 		public function echoHeaderJSON() {
