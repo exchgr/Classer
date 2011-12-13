@@ -135,7 +135,7 @@ form input[type=text], form input[type=password] {
 	vertical-align: text-top;
 }
 
-form input[type=submit], form a#cancel {
+form input[type=submit] {
 	width: 24px;
 	height: 24px;
 	margin: 0px;
@@ -158,7 +158,7 @@ header form#login input[type=submit] {
 	background-image: url("/images/go.png");
 }
 
-form a#cancel {
+form input[type=button]#cancel {
 	background-image: url("/images/x.png");
 }
 
