@@ -127,7 +127,7 @@ header form#login a {
 	color: #eeeeee;
 }
 
-nav form#searchbar input[type=text], header form#login input[type=text], header form#login input[type=password] {
+form input[type=text], form input[type=password] {
 	margin: 0px 0px 5px 0px;
 	padding: 5px 10px;
 	border: 0px;
@@ -135,11 +135,7 @@ nav form#searchbar input[type=text], header form#login input[type=text], header 
 	vertical-align: text-top;
 }
 
-form input[type=submit]{
-	background-color: #3584FF;
-}
-
-nav form#searchbar input[type=submit], header form#login input[type=submit] {
+form input[type=submit], form a#cancel {
 	width: 24px;
 	height: 24px;
 	margin: 0px;
@@ -150,7 +146,7 @@ nav form#searchbar input[type=submit], header form#login input[type=submit] {
 	background-color: #5C9AFF;
 }
 
-form input[type=submit]:hover{
+form input[type=submit]:hover, form a#cancel:hover{
 	background-color: #FF4D36 !important;
 }
 
@@ -159,7 +155,11 @@ nav form#searchbar input[type=submit] {
 }
 
 header form#login input[type=submit] {
+	background-image: url("/images/go.png");
+}
 
+form a#cancel {
+	background-image: url("/images/x.png");
 }
 
 /* Courses */

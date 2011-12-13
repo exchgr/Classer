@@ -61,7 +61,7 @@
 							$("form#login #start").click(function() {
 								$("form#login").html(
 									"<input type=\"text\" class=\"grey\" id=\"email\" name=\"email\" value=\"E-mail\" /> " + 
-									"<a href=\"#\" id=\"cancel\">x</a>" +
+									"<a href=\"#\" id=\"cancel\"> </a>" +
 									"<br /><input type=\"password\" class=\"grey\" id=\"password\" name=\"password\" value=\"Password\" /> " + 
 									"<input type=\"submit\" value=\"\">" +
 									"<br /><input type=\"checkbox\" name=\"remember\" id=\"remember\" /> Remember me"
