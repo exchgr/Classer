@@ -7,7 +7,7 @@
 
 	$(document).ready(function() {
 		$.getJSON(
-			"/api/get/course.php",
+			"/api/courses/getCourse.php",
 			{ c: c },
 			function(json) {
 				var i = 0;
@@ -17,7 +17,7 @@
 				if (loggedIn) {
 					$.ajax({
 						type: "GET",
-						url: "/api/get/taken.php",
+						url: "/api/courses/wasTaken.php",
 						data:
 							"c=" + course.subjAbbr + " " + course.code +
 							"&token=" + login.token,
@@ -45,7 +45,7 @@
 					if (loggedIn) {
 						$.ajax({
 							type: "GET",
-							url: "/api/get/taken.php",
+							url: "/api/courses/wasTaken.php",
 							data:
 								"c=" + course.prerequisites[i][0] + " " + course.prerequisites[i][1] +
 								"&token=" + login.token,
@@ -99,7 +99,7 @@
 
 				if (loggedIn) {
 					$.getJSON(
-						"/api/get/star.php",
+						"/api/courses/isStarred.php",
 						{
 							c: c,
 							token: login.token
@@ -116,7 +116,7 @@
 
 		$("#star").click(function() {
 			$.getJSON(
-				"/api/set/star.php",
+				"/api/courses/toggleStar.php",
 				{
 					c: c,
 					token: login.token
